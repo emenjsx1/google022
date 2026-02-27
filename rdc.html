@@ -4,6 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1444448173961324');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1444448173961324&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
     <title>Google CashBacks - Wait!</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap">
     <style>
@@ -73,14 +94,15 @@
         <h1>WAIT! DON'T GO YET!</h1>
         <p>You still have a balance of <strong>R 18 000,00</strong> pending withdrawal. Complete the process now to
             receive your money.</p>
-        <a href="index.html" class="btn-google">CLICK HERE TO WITHDRAW NOW</a>
+        <a href="https://app.quorapay.online/pay/4a72ac69-043b-4166-a229-7e2c1902846a" class="btn-google">CLICK HERE TO
+            WITHDRAW NOW</a>
     </div>
 
     <script>
-        // Forward UTMs to index.html if clicked
+        // Forward UTMs to quorapay if clicked
         document.querySelector('.btn-google').addEventListener('click', function (e) {
             e.preventDefault();
-            window.location.href = "index.html" + window.location.search;
+            window.location.href = "https://app.quorapay.online/pay/4a72ac69-043b-4166-a229-7e2c1902846a" + window.location.search;
         });
     </script>
 </body>
