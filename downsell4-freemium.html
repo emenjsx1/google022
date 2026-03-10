@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Acesso Gratuito — Google Rewards Freemium</title>
+    <script>
+        !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1444448173961324');
+        fbq('init', '4179716432354886');
+        fbq('init', '556915953880317');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=4179716432354886&ev=PageView&noscript=1" /></noscript>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=556915953880317&ev=PageView&noscript=1" /></noscript>
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --g-blue: #4285F4;
+            --g-red: #EA4335;
+            --g-yellow: #FBBC05;
+            --g-green: #34A853;
+            --bg: #F8F9FA;
+            --surface: #fff;
+            --border: #DADCE0;
+            --text: #202124;
+            --muted: #5F6368
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg);
+            min-height: 100vh;
+            color: var(--text)
+        }
+
+        .topbar {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(60, 64, 67, .15)
+        }
+
+        .topbar-logo {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 400
+        }
+
+        .topbar-logo .g {
+            color: var(--g-blue)
+        }
+
+        .topbar-logo .o1 {
+            color: var(--g-red)
+        }
+
+        .topbar-logo .o2 {
+            color: var(--g-yellow)
+        }
+
+        .topbar-logo .g2 {
+            color: var(--g-blue)
+        }
+
+        .topbar-logo .l {
+            color: var(--g-green)
+        }
+
+        .topbar-logo .e {
+            color: var(--g-red)
+        }
+
+        .topbar-badge {
+            background: linear-gradient(135deg, var(--g-green), #0A7A30);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #0F2027, #203A43, #2C5364);
+            padding: 44px 20px 36px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(52, 168, 83, .15) 0%, transparent 70%)
+        }
+
+        .free-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--g-green), #0A7A30);
+            color: #fff;
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 8px 32px;
+            border-radius: 30px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 16px rgba(52, 168, 83, .4);
+            letter-spacing: 0.5px
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .25);
+            border-radius: 20px;
+            padding: 5px 16px;
+            font-size: 0.78rem;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 14px;
+            display: block
+        }
+
+        .hero h1 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.3
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: #A7F3D0
+        }
+
+        .hero p {
+            font-size: 0.92rem;
+            opacity: .8;
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto
+        }
+
+        .main {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 32px 16px 60px
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(60, 64, 67, .1);
+            margin-bottom: 20px
+        }
+
+        .card-header {
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .card-header-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem
+        }
+
+        .card-header-icon.green {
+            background: linear-gradient(135deg, var(--g-green), #0A7A30)
+        }
+
+        .card-header h2 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text)
+        }
+
+        .card-body {
+            padding: 24px
+        }
+
+        /* THE FORM */
+        .lead-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px
+        }
+
+        .form-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.4px
+        }
+
+        .form-input {
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: 'Roboto', sans-serif;
+            color: var(--text);
+            background: #fff;
+            transition: all .2s;
+            outline: none
+        }
+
+        .form-input:focus {
+            border-color: var(--g-green);
+            box-shadow: 0 0 0 3px rgba(52, 168, 83, .15)
+        }
+
+        .form-input::placeholder {
+            color: #BDC1C6
+        }
+
+        .whatsapp-opt {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px;
+            background: #F0FFF4;
+            border: 2px solid var(--g-green);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all .2s
+        }
+
+        .whatsapp-opt:hover {
+            background: #DCFCE7
+        }
+
+        .wa-checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--g-green);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            flex-shrink: 0;
+            transition: all .2s
+        }
+
+        .wa-checkbox.checked {
+            background: var(--g-green);
+            border-color: var(--g-green)
+        }
+
+        .wa-checkbox.checked::after {
+            content: '✓';
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 700
+        }
+
+        .wa-opt-text {
+            font-size: 0.85rem;
+            color: #1B5E20;
+            font-weight: 500
+        }
+
+        .wa-opt-sub {
+            font-size: 0.75rem;
+            color: #388E3C
+        }
+
+        /* WHAT'S FREE */
+        .free-vs-paid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border)
+        }
+
+        .fvp-col {
+            padding: 16px
+        }
+
+        .fvp-col:first-child {
+            background: #F8F9FA;
+            border-right: 1px solid var(--border)
+        }
+
+        .fvp-col:last-child {
+            background: linear-gradient(135deg, #F0FDF4, #DCFCE7)
+        }
+
+        .fvp-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .fvp-col:first-child .fvp-title {
+            color: var(--muted)
+        }
+
+        .fvp-col:last-child .fvp-title {
+            color: var(--g-green)
+        }
+
+        .fvp-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+            color: var(--text)
+        }
+
+        .fvp-item:last-child {
+            margin-bottom: 0
+        }
+
+        .check-g {
+            color: var(--g-green);
+            font-weight: 700
+        }
+
+        .check-x {
+            color: #D1D5DB
+        }
+
+        /* WHAT HAPPENS NEXT */
+        .flow-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0
+        }
+
+        .flow-step {
+            display: flex;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px dashed var(--border);
+            position: relative
+        }
+
+        .flow-step:last-child {
+            border-bottom: none
+        }
+
+        .step-num {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Google Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            color: #fff
+        }
+
+        .step-num.s1 {
+            background: var(--g-green)
+        }
+
+        .step-num.s2 {
+            background: var(--g-blue)
+        }
+
+        .step-num.s3 {
+            background: var(--g-yellow);
+            color: #7A6200
+        }
+
+        .step-num.s4 {
+            background: var(--g-red)
+        }
+
+        .step-content strong {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 2px
+        }
+
+        .step-content span {
+            font-size: 0.78rem;
+            color: var(--muted);
+            line-height: 1.4
+        }
+
+        /* CTA */
+        .cta-yes {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--g-green), #0A7A30);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .3s;
+            box-shadow: 0 6px 20px rgba(52, 168, 83, .4);
+            animation: pGr 2.5s ease-in-out infinite;
+            margin-bottom: 10px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .cta-yes:hover {
+            transform: translateY(-2px);
+            animation: none
+        }
+
+        .cta-yes::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .15), transparent);
+            transition: left .5s
+        }
+
+        .cta-yes:hover::before {
+            left: 100%
+        }
+
+        @keyframes pGr {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 20px rgba(52, 168, 83, .4)
+            }
+
+            50% {
+                box-shadow: 0 6px 32px rgba(52, 168, 83, .7)
+            }
+        }
+
+        .privacy-note {
+            text-align: center;
+            font-size: 0.72rem;
+            color: var(--muted);
+            margin-top: 8px;
+            line-height: 1.5;
+            padding: 0 8px
+        }
+
+        /* SUCCESS MESSAGE */
+        .success-msg {
+            display: none;
+            background: linear-gradient(135deg, #F0FDF4, #DCFCE7);
+            border: 2px solid var(--g-green);
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            margin-top: 16px
+        }
+
+        .success-msg .icon {
+            font-size: 3rem;
+            margin-bottom: 12px
+        }
+
+        .success-msg h3 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.2rem;
+            color: #1B5E20;
+            margin-bottom: 8px
+        }
+
+        .success-msg p {
+            font-size: 0.85rem;
+            color: #388E3C;
+            line-height: 1.5
+        }
+
+        .footer {
+            background: #202124;
+            padding: 16px;
+            text-align: center
+        }
+
+        .footer-logo {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 6px
+        }
+
+        .footer-logo .g {
+            color: var(--g-blue)
+        }
+
+        .footer-logo .o1 {
+            color: var(--g-red)
+        }
+
+        .footer-logo .o2 {
+            color: var(--g-yellow)
+        }
+
+        .footer-logo .g2 {
+            color: var(--g-blue)
+        }
+
+        .footer-logo .l {
+            color: var(--g-green)
+        }
+
+        .footer-logo .e {
+            color: var(--g-red)
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, .4);
+            font-size: 0.7rem;
+            line-height: 1.6
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="topbar-logo"><span class="g">G</span><span class="o1">o</span><span class="o2">o</span><span
+                class="g2">g</span><span class="l">l</span><span class="e">e</span></div>
+        <div class="topbar-badge">🎯 100% GRATUITO</div>
+    </div>
+
+    <div class="hero">
+        <div class="free-badge">🎉 TOTALMENTE GRATUITO</div>
+        <div class="hero-tag">Sem cartão de crédito · Sem compromisso</div>
+        <h1>Tudo bem! Comece<br><em>Completamente de Graça</em></h1>
+        <p>Registe o seu e-mail e receba acesso gratuito limitado ao Google Rewards — faça upgrade quando e se quiser,
+            sem pressão.</p>
+    </div>
+
+    <div class="main">
+
+        <!-- LEAD CAPTURE FORM -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-icon green">📧</div>
+                <h2>Criar Conta Gratuita Agora</h2>
+            </div>
+            <div class="card-body">
+                <div class="lead-form" id="leadForm">
+                    <div class="form-group">
+                        <label class="form-label">Nome Completo</label>
+                        <input class="form-input" type="text" id="fname" placeholder="Ex: João Silva"
+                            autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">E-mail</label>
+                        <input class="form-input" type="email" id="femail" placeholder="joao@exemplo.com"
+                            autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">WhatsApp (opcional)</label>
+                        <input class="form-input" type="tel" id="fwhatsapp" placeholder="+27 00 000 0000"
+                            autocomplete="tel">
+                    </div>
+                    <div class="whatsapp-opt" id="waOpt" onclick="toggleWA()">
+                        <div class="wa-checkbox" id="waCheck"></div>
+                        <div>
+                            <div class="wa-opt-text">💬 Quero receber dicas de recompensas no WhatsApp</div>
+                            <div class="wa-opt-sub">Enviamos apenas 1-2 mensagens por semana. Cancele quando quiser.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="cta-yes" onclick="submitLead()">
+                        🎯 Criar Conta Gratuita — Aceder Agora
+                    </button>
+                    <div class="privacy-note">
+                        🔒 Os seus dados estão seguros. Não partilhamos com terceiros.<br>
+                        Ao clicar, aceita os nossos Termos e Política de Privacidade.
+                    </div>
+                </div>
+
+                <div class="success-msg" id="successMsg">
+                    <div class="icon">🎉</div>
+                    <h3>Conta criada com sucesso!</h3>
+                    <p>Enviámos um e-mail de confirmação. Verifique a sua caixa de entrada (e o spam, só por
+                        precaução!).<br><br>
+                        Em breve receberá instruções para aceder à sua conta gratuita.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FREE VS PAID -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-icon green">📊</div>
+                <h2>Gratuito vs Conta Completa</h2>
+            </div>
+            <div class="card-body">
+                <div class="free-vs-paid">
+                    <div class="fvp-col">
+                        <div class="fvp-title">🆓 Gratuito</div>
+                        <div class="fvp-item"><span class="check-g">✓</span> Painel básico</div>
+                        <div class="fvp-item"><span class="check-g">✓</span> Recompensas limitadas</div>
+                        <div class="fvp-item"><span class="check-x">✗</span> Gift cards</div>
+                        <div class="fvp-item"><span class="check-x">✗</span> Suporte prioritário</div>
+                        <div class="fvp-item"><span class="check-x">✗</span> Recompensas em dobro</div>
+                        <div class="fvp-item"><span class="check-x">✗</span> Acesso vitalício</div>
+                    </div>
+                    <div class="fvp-col">
+                        <div class="fvp-title">⭐ Conta Completa</div>
+                        <div class="fvp-item"><span class="check-g">✓</span> Painel completo</div>
+                        <div class="fvp-item"><span class="check-g">✓</span> Recompensas ilimitadas</div>
+                        <div class="fvp-item"><span class="check-g">✓</span> Gift cards incluídos</div>
+                        <div class="fvp-item"><span class="check-g">✓</span> Suporte 24/7</div>
+                        <div class="fvp-item"><span class="check-g">✓</span> Recompensas em dobro</div>
+                        <div class="fvp-item"><span class="check-g">✓</span> Acesso vitalício</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WHAT HAPPENS NEXT -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-icon green">🗺️</div>
+                <h2>O que acontece após o registo</h2>
+            </div>
+            <div class="card-body">
+                <div class="flow-steps">
+                    <div class="flow-step">
+                        <div class="step-num s1">1</div>
+                        <div class="step-content">
+                            <strong>Recebe e-mail de confirmação</strong>
+                            <span>Imediatamente após o registo — confirme o seu e-mail para ativar</span>
+                        </div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-num s2">2</div>
+                        <div class="step-content">
+                            <strong>Acessa à conta gratuita</strong>
+                            <span>Explore o painel básico e veja as primeiras recompensas disponíveis</span>
+                        </div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-num s3">3</div>
+                        <div class="step-content">
+                            <strong>Recebe dicas exclusivas</strong>
+                            <span>Por e-mail e WhatsApp, partilhamos as melhores estratégias de recompensas</span>
+                        </div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-num s4">4</div>
+                        <div class="step-content">
+                            <strong>Upgrade quando quiser</strong>
+                            <span>Quando estiver pronto, faça upgrade com 1 clique para acesso completo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo"><span class="g">G</span><span class="o1">o</span><span class="o2">o</span><span
+                class="g2">g</span><span class="l">l</span><span class="e">e</span></div>
+        <div class="footer-text">© 2025 Google Rewards · All rights reserved<br>This site is operated independently and
+            does not officially represent Google LLC.</div>
+    </div>
+
+    <script>
+        var waChecked = false;
+        function toggleWA() {
+            waChecked = !waChecked;
+            document.getElementById('waCheck').className = 'wa-checkbox' + (waChecked ? ' checked' : '');
+        }
+        function getUTMs() { var p = new URLSearchParams(window.location.search), params = new URLSearchParams();['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'src', 'sck'].forEach(function (k) { if (p.get(k)) params.set(k, p.get(k)) }); return params.toString() }
+
+        function submitLead() {
+            var name = document.getElementById('fname').value.trim();
+            var email = document.getElementById('femail').value.trim();
+            if (!email || !email.includes('@')) {
+                alert('Por favor introduza um e-mail válido.');
+                return;
+            }
+
+            // Fire Lead event to Facebook Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: 'Google Rewards Freemium',
+                    value: 0,
+                    currency: 'ZAR'
+                });
+            }
+
+            // Here you would normally POST to your email/CRM system:
+            // fetch('/api/leads', {method:'POST', body: JSON.stringify({name, email, whatsapp: document.getElementById('fwhatsapp').value})})
+
+            // Show success message
+            document.getElementById('leadForm').style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+
+            // Redirect after 3 seconds to thank you or nurture page
+            setTimeout(function () {
+                // Replace with your thank you URL or nurture sequence
+                window.location.href = 'obrigado.html';
+            }, 4000);
+        }
+    </script>
+</body>
+
+</html>

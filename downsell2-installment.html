@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔄 Pague em 2x — Google Rewards Parcelado</title>
+    <script>
+        !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1444448173961324');
+        fbq('init', '4179716432354886');
+        fbq('init', '556915953880317');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=4179716432354886&ev=PageView&noscript=1" /></noscript>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=556915953880317&ev=PageView&noscript=1" /></noscript>
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --g-blue: #4285F4;
+            --g-red: #EA4335;
+            --g-yellow: #FBBC05;
+            --g-green: #34A853;
+            --bg: #F8F9FA;
+            --surface: #fff;
+            --border: #DADCE0;
+            --text: #202124;
+            --muted: #5F6368
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg);
+            min-height: 100vh;
+            color: var(--text)
+        }
+
+        .exit-banner {
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            border-bottom: 2px solid var(--g-yellow);
+            padding: 14px 20px;
+            text-align: center
+        }
+
+        .exit-banner p {
+            font-size: 0.85rem;
+            color: #78350F;
+            font-weight: 500
+        }
+
+        .exit-banner strong {
+            color: #B45309
+        }
+
+        .topbar {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(60, 64, 67, .15)
+        }
+
+        .topbar-logo {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 400
+        }
+
+        .topbar-logo .g {
+            color: var(--g-blue)
+        }
+
+        .topbar-logo .o1 {
+            color: var(--g-red)
+        }
+
+        .topbar-logo .o2 {
+            color: var(--g-yellow)
+        }
+
+        .topbar-logo .g2 {
+            color: var(--g-blue)
+        }
+
+        .topbar-logo .l {
+            color: var(--g-green)
+        }
+
+        .topbar-logo .e {
+            color: var(--g-red)
+        }
+
+        .topbar-badge {
+            background: linear-gradient(135deg, var(--g-green), #0A7A30);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1B5E20, #2E7D32);
+            padding: 44px 20px;
+            text-align: center;
+            color: #fff
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, .15);
+            border: 1px solid rgba(255, 255, 255, .3);
+            border-radius: 20px;
+            padding: 5px 16px;
+            font-size: 0.78rem;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 14px
+        }
+
+        .hero h1 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.25
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: #A7F3D0
+        }
+
+        .hero p {
+            font-size: 0.92rem;
+            opacity: .8;
+            line-height: 1.6;
+            max-width: 480px;
+            margin: 0 auto 28px
+        }
+
+        /* INSTALLMENT VISUAL */
+        .installment-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap
+        }
+
+        .install-card {
+            background: rgba(255, 255, 255, .12);
+            border: 2px solid rgba(255, 255, 255, .25);
+            border-radius: 16px;
+            padding: 20px 28px;
+            text-align: center;
+            min-width: 140px
+        }
+
+        .install-card .num {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #A7F3D0;
+            line-height: 1
+        }
+
+        .install-card .lbl {
+            font-size: 0.78rem;
+            opacity: .7;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-top: 4px
+        }
+
+        .install-card.main {
+            background: rgba(255, 255, 255, .2);
+            border-color: rgba(167, 243, 208, .5)
+        }
+
+        .install-divider {
+            font-size: 1.5rem;
+            opacity: .4
+        }
+
+        .main {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 32px 16px 60px
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(60, 64, 67, .1);
+            margin-bottom: 20px
+        }
+
+        .card-header {
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .card-header-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem
+        }
+
+        .card-header-icon.green {
+            background: linear-gradient(135deg, var(--g-green), #0A7A30)
+        }
+
+        .card-header h2 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text)
+        }
+
+        .card-body {
+            padding: 24px
+        }
+
+        /* PAYMENT PLAN */
+        .plan-grid {
+            display: grid;
+            gap: 16px
+        }
+
+        .plan-box {
+            border: 2px solid;
+            border-radius: 14px;
+            padding: 20px;
+            position: relative
+        }
+
+        .plan-box.basic {
+            border-color: var(--border);
+            background: #F8F9FA
+        }
+
+        .plan-box.split {
+            border-color: var(--g-green);
+            background: linear-gradient(135deg, #F0FDF4, #DCFCE7)
+        }
+
+        .plan-tag {
+            position: absolute;
+            top: -12px;
+            right: 16px;
+            background: var(--g-green);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 10px
+        }
+
+        .plan-title {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text)
+        }
+
+        .plan-price {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--g-green);
+            margin-bottom: 4px
+        }
+
+        .plan-desc {
+            font-size: 0.78rem;
+            color: var(--muted)
+        }
+
+        .plan-items {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 12px
+        }
+
+        .plan-items li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: var(--text)
+        }
+
+        .plan-items li::before {
+            content: '✓';
+            color: var(--g-green);
+            font-weight: 700
+        }
+
+        /* CALENDAR */
+        .calendar-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 16px 0
+        }
+
+        .cal-item {
+            background: linear-gradient(135deg, #F0FDF4, #DCFCE7);
+            border: 2px solid var(--g-green);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center
+        }
+
+        .cal-item .da {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px
+        }
+
+        .cal-item .am {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--g-green)
+        }
+
+        .cal-item .la {
+            font-size: 0.72rem;
+            color: #1B5E20;
+            margin-top: 2px
+        }
+
+        .guarantee {
+            background: #FFF8E8;
+            border: 1px solid var(--g-yellow);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 20px
+        }
+
+        .guarantee .icon {
+            font-size: 1.8rem;
+            flex-shrink: 0
+        }
+
+        .guarantee-text strong {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #7A6200;
+            margin-bottom: 2px
+        }
+
+        .guarantee-text span {
+            font-size: 0.78rem;
+            color: #9E7E00
+        }
+
+        .cta-yes {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--g-green), #0A7A30);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .3s;
+            box-shadow: 0 6px 20px rgba(52, 168, 83, .4);
+            animation: pG 2.5s ease-in-out infinite;
+            margin-bottom: 12px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .cta-yes:hover {
+            transform: translateY(-2px);
+            animation: none
+        }
+
+        .cta-yes::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .15), transparent);
+            transition: left .5s
+        }
+
+        .cta-yes:hover::before {
+            left: 100%
+        }
+
+        @keyframes pG {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 20px rgba(52, 168, 83, .4)
+            }
+
+            50% {
+                box-shadow: 0 6px 32px rgba(52, 168, 83, .7)
+            }
+        }
+
+        .cta-no {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            color: var(--muted);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all .2s
+        }
+
+        .cta-no:hover {
+            background: #F8F9FA
+        }
+
+        .cta-note {
+            text-align: center;
+            font-size: 0.73rem;
+            color: var(--muted);
+            margin-top: 10px
+        }
+
+        .footer {
+            background: #202124;
+            padding: 16px;
+            text-align: center
+        }
+
+        .footer-logo {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 6px
+        }
+
+        .footer-logo .g {
+            color: var(--g-blue)
+        }
+
+        .footer-logo .o1 {
+            color: var(--g-red)
+        }
+
+        .footer-logo .o2 {
+            color: var(--g-yellow)
+        }
+
+        .footer-logo .g2 {
+            color: var(--g-blue)
+        }
+
+        .footer-logo .l {
+            color: var(--g-green)
+        }
+
+        .footer-logo .e {
+            color: var(--g-red)
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, .4);
+            font-size: 0.7rem;
+            line-height: 1.6
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(6px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s
+        }
+
+        .overlay.show {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .g-dots {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px
+        }
+
+        .g-dots span {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            animation: gBounce 1.2s ease-in-out infinite
+        }
+
+        .g-dots span:nth-child(1) {
+            background: var(--g-blue);
+            animation-delay: 0s
+        }
+
+        .g-dots span:nth-child(2) {
+            background: var(--g-red);
+            animation-delay: .15s
+        }
+
+        .g-dots span:nth-child(3) {
+            background: var(--g-yellow);
+            animation-delay: .3s
+        }
+
+        .g-dots span:nth-child(4) {
+            background: var(--g-green);
+            animation-delay: .45s
+        }
+
+        @keyframes gBounce {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(.6);
+                opacity: .5
+            }
+
+            40% {
+                transform: scale(1);
+                opacity: 1
+            }
+        }
+
+        .overlay-text {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1rem;
+            color: var(--muted);
+            font-weight: 500
+        }
+
+        .overlay-sub {
+            font-size: .82rem;
+            color: #9AA0A6;
+            margin-top: 6px
+        }
+    </style>
+</head>
+
+<body>
+    <!-- EXIT INTENT BANNER -->
+    <div class="exit-banner">
+        <p>⚠️ Espere! Preparámos uma opção especial — <strong>pague em 2 vezes sem juros.</strong></p>
+    </div>
+
+    <div class="topbar">
+        <div class="topbar-logo"><span class="g">G</span><span class="o1">o</span><span class="o2">o</span><span
+                class="g2">g</span><span class="l">l</span><span class="e">e</span></div>
+        <div class="topbar-badge">🔄 SEM JUROS</div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-tag">💡 Solução para o seu orçamento</div>
+        <h1>Prefere Dividir?<br><em>2x de ZAR 99</em> — Sem Juros!</h1>
+        <p>Mesmo produto, mesmo benefício completo — apenas dividido em 2 parcelas mensais sem qualquer custo extra.</p>
+        <div class="installment-visual">
+            <div class="install-card main">
+                <div class="num">ZAR 99</div>
+                <div class="lbl">Hoje</div>
+            </div>
+            <div class="install-divider">+</div>
+            <div class="install-card main">
+                <div class="num">ZAR 99</div>
+                <div class="lbl">Próximo mês</div>
+            </div>
+            <div class="install-divider">=</div>
+            <div class="install-card">
+                <div class="num">ZAR 198</div>
+                <div class="lbl">Total (sem juros)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <!-- PLAN COMPARISON -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-icon green">📊</div>
+                <h2>Compare os planos de pagamento</h2>
+            </div>
+            <div class="card-body">
+                <div class="plan-grid">
+                    <div class="plan-box basic">
+                        <div class="plan-title">💳 Pagamento Único</div>
+                        <div class="plan-price" style="color:var(--muted)">ZAR 197</div>
+                        <div class="plan-desc">Tudo de uma vez</div>
+                    </div>
+                    <div class="plan-box split">
+                        <div class="plan-tag">✨ RECOMENDADO</div>
+                        <div class="plan-title">🔄 Parcelado 2x</div>
+                        <div class="plan-price">2× ZAR 99</div>
+                        <div class="plan-desc">Sem juros · Sem taxas</div>
+                        <ul class="plan-items">
+                            <li>Acesso imediato após 1ª parcela</li>
+                            <li>2ª parcela em 30 dias</li>
+                            <li>Benefício completo desde o 1º dia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CALENDAR -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-icon green">📅</div>
+                <h2>Calendário de Pagamento</h2>
+            </div>
+            <div class="card-body">
+                <div class="calendar-visual">
+                    <div class="cal-item">
+                        <div class="da">📅 Hoje</div>
+                        <div class="am">ZAR 99</div>
+                        <div class="la">✅ Acesso imediato</div>
+                    </div>
+                    <div class="cal-item">
+                        <div class="da">📅 Em 30 dias</div>
+                        <div class="am">ZAR 99</div>
+                        <div class="la">🔄 Automático · Sem juros</div>
+                    </div>
+                </div>
+                <p style="text-align:center;font-size:0.8rem;color:var(--muted);margin-top:8px">Total: ZAR 198 · Sem
+                    taxas adicionais · Cancela a qualquer momento</p>
+            </div>
+        </div>
+
+        <!-- GUARANTEE -->
+        <div class="guarantee">
+            <div class="icon">🛡️</div>
+            <div class="guarantee-text">
+                <strong>Garantia Total de 30 Dias</strong>
+                <span>Se nos primeiros 30 dias não estiver satisfeito, devolvemos o dinheiro da 1ª parcela. Simples
+                    assim.</span>
+            </div>
+        </div>
+
+        <button class="cta-yes" onclick="acceptOffer()">
+            🔄 SIM! Pagar em 2x de ZAR 99 — Sem Juros
+        </button>
+        <button class="cta-no" onclick="declineOffer()">
+            Não, prefiro não aproveitar esta oportunidade
+        </button>
+        <div class="cta-note">🔒 Pagamento seguro · 2ª parcela cobrada automaticamente em 30 dias</div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo"><span class="g">G</span><span class="o1">o</span><span class="o2">o</span><span
+                class="g2">g</span><span class="l">l</span><span class="e">e</span></div>
+        <div class="footer-text">© 2025 Google Rewards · All rights reserved<br>This site is operated independently and
+            does not officially represent Google LLC.</div>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="g-dots"><span></span><span></span><span></span><span></span></div>
+        <div class="overlay-text">A configurar o seu plano parcelado…</div>
+        <div class="overlay-sub">Por favor não feche esta janela</div>
+    </div>
+
+    <script>
+        function getUTMs() { var p = new URLSearchParams(window.location.search), params = new URLSearchParams();['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'src', 'sck'].forEach(function (k) { if (p.get(k)) params.set(k, p.get(k)) }); return params.toString() }
+        function acceptOffer() {
+            if (typeof fbq !== 'undefined') { fbq('track', 'InitiateCheckout', { value: 99, currency: 'ZAR', content_name: 'Google Rewards Installment 2x' }) }
+            document.getElementById('overlay').classList.add('show');
+            setTimeout(function () { var base = 'https://checkout.payjsr.com/SEU-LINK-PARCELADO-AQUI'; var qs = getUTMs(); window.location.href = base + (qs ? '?' + qs : ''); }, 1200);
+        }
+        function declineOffer() { var qs = getUTMs(); window.location.href = 'downsell3-trial.html' + (qs ? '?' + qs : '') }
+    </script>
+</body>
+
+</html>

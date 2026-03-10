@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>♾️ Acesso Vitalício — Google Rewards Forever</title>
+    <script>
+        !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1444448173961324');
+        fbq('init', '4179716432354886');
+        fbq('init', '556915953880317');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=4179716432354886&ev=PageView&noscript=1" /></noscript>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=556915953880317&ev=PageView&noscript=1" /></noscript>
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --g-blue: #4285F4;
+            --g-red: #EA4335;
+            --g-yellow: #FBBC05;
+            --g-green: #34A853;
+            --bg: #F8F9FA;
+            --surface: #fff;
+            --border: #DADCE0;
+            --text: #202124;
+            --muted: #5F6368
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg);
+            min-height: 100vh;
+            color: var(--text);
+            overflow-x: hidden
+        }
+
+        .countdown-bar {
+            background: linear-gradient(90deg, #7C3AED, #4F46E5);
+            color: #fff;
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            font-weight: 600
+        }
+
+        .countdown-bar strong {
+            font-size: 1.05rem;
+            color: #FCD34D
+        }
+
+        .topbar {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(60, 64, 67, .15)
+        }
+
+        .topbar-logo {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 400
+        }
+
+        .topbar-logo .g {
+            color: var(--g-blue)
+        }
+
+        .topbar-logo .o1 {
+            color: var(--g-red)
+        }
+
+        .topbar-logo .o2 {
+            color: var(--g-yellow)
+        }
+
+        .topbar-logo .g2 {
+            color: var(--g-blue)
+        }
+
+        .topbar-logo .l {
+            color: var(--g-green)
+        }
+
+        .topbar-logo .e {
+            color: var(--g-red)
+        }
+
+        .topbar-badge {
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #064E3B 0%, #065F46 50%, #047857 100%);
+            padding: 44px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero-infinity {
+            font-size: 4rem;
+            margin-bottom: 12px;
+            display: block;
+            animation: floatAnim 3s ease-in-out infinite
+        }
+
+        @keyframes floatAnim {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(251, 188, 5, .15);
+            border: 1px solid var(--g-yellow);
+            border-radius: 20px;
+            padding: 5px 16px;
+            font-size: 0.78rem;
+            color: var(--g-yellow);
+            font-weight: 600;
+            margin-bottom: 14px;
+            letter-spacing: 0.5px
+        }
+
+        .hero h1 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            line-height: 1.25
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: #6EE7B7
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, .8);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            max-width: 520px;
+            margin: 0 auto 24px
+        }
+
+        .math-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        .math-card {
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .2);
+            border-radius: 14px;
+            padding: 16px 20px;
+            text-align: center;
+            min-width: 120px
+        }
+
+        .math-card .lbl {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, .6);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px
+        }
+
+        .math-card .val {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff
+        }
+
+        .math-card.winner {
+            background: linear-gradient(135deg, rgba(110, 231, 183, .3), rgba(52, 168, 83, .2));
+            border-color: #6EE7B7
+        }
+
+        .math-card.winner .val {
+            color: #6EE7B7
+        }
+
+        .math-op {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, .3)
+        }
+
+        /* MAIN */
+        .main {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 32px 16px 60px
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(60, 64, 67, .1);
+            margin-bottom: 20px
+        }
+
+        .card-header {
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .card-header-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem
+        }
+
+        .card-header-icon.green {
+            background: linear-gradient(135deg, #34A853, #0A7A30)
+        }
+
+        .card-header h2 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text)
+        }
+
+        .card-body {
+            padding: 24px
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            padding-left: 32px
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--g-green), #6EE7B7)
+        }
+
+        .tl-item {
+            position: relative;
+            margin-bottom: 20px
+        }
+
+        .tl-item:last-child {
+            margin-bottom: 0
+        }
+
+        .tl-dot {
+            position: absolute;
+            left: -24px;
+            top: 3px;
+            width: 20px;
+            height: 20px;
+            background: var(--g-green);
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px var(--g-green)
+        }
+
+        .tl-content strong {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 2px
+        }
+
+        .tl-content span {
+            font-size: 0.78rem;
+            color: var(--muted);
+            line-height: 1.4
+        }
+
+        /* SAVINGS CALC */
+        .savings-calc {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 2px solid var(--g-green);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin: 20px 0
+        }
+
+        .savings-calc h3 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1rem;
+            color: #1B5E20;
+            margin-bottom: 16px
+        }
+
+        .calc-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+            text-align: left
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, .6);
+            border-radius: 8px
+        }
+
+        .calc-row .label {
+            color: var(--muted)
+        }
+
+        .calc-row .value {
+            font-weight: 600;
+            color: var(--text)
+        }
+
+        .calc-row.total {
+            background: var(--g-green);
+            color: #fff
+        }
+
+        .calc-row.total .label,
+        .calc-row.total .value {
+            color: #fff;
+            font-weight: 700
+        }
+
+        .savings-big {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--g-green);
+            margin: 8px 0
+        }
+
+        .savings-sub {
+            font-size: 0.82rem;
+            color: #1B5E20
+        }
+
+        /* GUARANTEE */
+        .guarantee-block {
+            background: linear-gradient(135deg, #FFF8E8, #FEF3C7);
+            border: 2px solid var(--g-yellow);
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px
+        }
+
+        .g-icon-big {
+            width: 52px;
+            height: 52px;
+            background: var(--g-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0
+        }
+
+        .g-text strong {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #7A6200;
+            margin-bottom: 4px
+        }
+
+        .g-text span {
+            font-size: 0.8rem;
+            color: #9E7E00;
+            line-height: 1.5
+        }
+
+        /* PRICE */
+        .price-final {
+            background: linear-gradient(135deg, #064E3B, #065F46);
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px
+        }
+
+        .price-final .lbl {
+            font-size: 0.8rem;
+            opacity: .7;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px
+        }
+
+        .price-final .price-orig {
+            font-size: 1rem;
+            opacity: .5;
+            text-decoration: line-through;
+            margin-bottom: 4px
+        }
+
+        .price-final .price-new {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #6EE7B7
+        }
+
+        .price-final .price-sub {
+            font-size: 0.82rem;
+            opacity: .7;
+            margin-top: 4px
+        }
+
+        .badge-forever {
+            display: inline-block;
+            background: rgba(110, 231, 183, .2);
+            border: 1px solid #6EE7B7;
+            border-radius: 20px;
+            padding: 4px 16px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #6EE7B7;
+            margin-top: 10px
+        }
+
+        .cta-yes {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--g-green), #0A7A30);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .3s;
+            box-shadow: 0 6px 20px rgba(52, 168, 83, .4);
+            animation: pulseG 2.5s ease-in-out infinite;
+            margin-bottom: 12px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .cta-yes:hover {
+            transform: translateY(-2px);
+            animation: none;
+            box-shadow: 0 10px 28px rgba(52, 168, 83, .6)
+        }
+
+        .cta-yes::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .15), transparent);
+            transition: left .5s
+        }
+
+        .cta-yes:hover::before {
+            left: 100%
+        }
+
+        @keyframes pulseG {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 20px rgba(52, 168, 83, .4)
+            }
+
+            50% {
+                box-shadow: 0 6px 32px rgba(52, 168, 83, .7)
+            }
+        }
+
+        .cta-no {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            color: var(--muted);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all .2s
+        }
+
+        .cta-no:hover {
+            background: #F8F9FA
+        }
+
+        .cta-note {
+            text-align: center;
+            font-size: 0.73rem;
+            color: var(--muted);
+            margin-top: 10px
+        }
+
+        .footer {
+            background: #202124;
+            padding: 16px;
+            text-align: center
+        }
+
+        .footer-logo {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 6px
+        }
+
+        .footer-logo .g {
+            color: var(--g-blue)
+        }
+
+        .footer-logo .o1 {
+            color: var(--g-red)
+        }
+
+        .footer-logo .o2 {
+            color: var(--g-yellow)
+        }
+
+        .footer-logo .g2 {
+            color: var(--g-blue)
+        }
+
+        .footer-logo .l {
+            color: var(--g-green)
+        }
+
+        .footer-logo .e {
+            color: var(--g-red)
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, .4);
+            font-size: 0.7rem;
+            line-height: 1.6
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(6px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s
+        }
+
+        .overlay.show {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .g-dots {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px
+        }
+
+        .g-dots span {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            animation: gBounce 1.2s ease-in-out infinite
+        }
+
+        .g-dots span:nth-child(1) {
+            background: var(--g-blue);
+            animation-delay: 0s
+        }
+
+        .g-dots span:nth-child(2) {
+            background: var(--g-red);
+            animation-delay: .15s
+        }
+
+        .g-dots span:nth-child(3) {
+            background: var(--g-yellow);
+            animation-delay: .3s
+        }
+
+        .g-dots span:nth-child(4) {
+            background: var(--g-green);
+            animation-delay: .45s
+        }
+
+        @keyframes gBounce {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(.6);
+                opacity: .5
+            }
+
+            40% {
+                transform: scale(1);
+                opacity: 1
+            }
+        }
+
+        .overlay-text {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1rem;
+            color: var(--muted);
+            font-weight: 500
+        }
+
+        .overlay-sub {
+            font-size: .82rem;
+            color: #9AA0A6;
+            margin-top: 6px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="countdown-bar">
+        ⏳ Oferta vitalícia disponível por mais: <strong id="countdown">09:59</strong>
+    </div>
+
+    <div class="topbar">
+        <div class="topbar-logo"><span class="g">G</span><span class="o1">o</span><span class="o2">o</span><span
+                class="g2">g</span><span class="l">l</span><span class="e">e</span></div>
+        <div class="topbar-badge">♾️ ACESSO VITALÍCIO</div>
+    </div>
+
+    <div class="hero">
+        <span class="hero-infinity">♾️</span>
+        <div class="hero-tag">📅 Pague Uma Vez — Aceda Para Sempre</div>
+        <h1>Nunca Mais Renove.<br><em>Acesso Vitalício</em> — Para Sempre.</h1>
+        <p>Pare de pagar todos os anos. Por apenas ZAR 147 hoje, o seu acesso ao Google Rewards nunca expira — uma única
+            vez e é seu para sempre.</p>
+        <div class="math-block">
+            <div class="math-card">
+                <div class="lbl">Renovação Anual</div>
+                <div class="val">ZAR 197/ano</div>
+            </div>
+            <div class="math-op">VS</div>
+            <div class="math-card winner">
+                <div class="lbl">Vitalício Hoje</div>
+                <div class="val">ZAR 147</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+
+        <!-- TIMELINE -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-icon green">📅</div>
+                <h2>O Futuro Com e Sem Acesso Vitalício</h2>
+            </div>
+            <div class="card-body">
+                <div class="timeline">
+                    <div class="tl-item">
+                        <div class="tl-dot"></div>
+                        <div class="tl-content">
+                            <strong>Hoje — Paga ZAR 147 uma vez</strong>
+                            <span>Acesso imediato e permanente ao Google Rewards</span>
+                        </div>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot"></div>
+                        <div class="tl-content">
+                            <strong>Ano 1 — Já economizou ZAR 50</strong>
+                            <span>Sem renovação. Acesso contínuo garantido automaticamente</span>
+                        </div>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot"></div>
+                        <div class="tl-content">
+                            <strong>Ano 2 — Economizou ZAR 247 no total</strong>
+                            <span>Enquanto outros pagam ZAR 197, você não paga nada</span>
+                        </div>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot"></div>
+                        <div class="tl-content">
+                            <strong>Ano 5 — Poupança total: ZAR 838</strong>
+                            <span>5 anos de acesso premium por uma única taxa de ZAR 147</span>
+                        </div>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot"></div>
+                        <div class="tl-content">
+                            <strong>Para sempre — Acesso garantido</strong>
+                            <span>Independentemente de futuros aumentos de preço</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SAVINGS CALC -->
+        <div class="savings-calc">
+            <h3>💰 Calculadora de Poupança Real</h3>
+            <div class="calc-rows">
+                <div class="calc-row"><span class="label">Custo vitalício hoje</span><span class="value">ZAR 147</span>
+                </div>
+                <div class="calc-row"><span class="label">Renovação 3 anos</span><span class="value">ZAR 591</span>
+                </div>
+                <div class="calc-row"><span class="label">Renovação 5 anos</span><span class="value">ZAR 985</span>
+                </div>
+                <div class="calc-row total"><span class="label">Poupança em 5 anos</span><span class="value">ZAR
+                        838</span></div>
+            </div>
+            <div class="savings-big">Poupa ZAR 838+</div>
+            <div class="savings-sub">Ao longo de 5 anos — com acesso vitalício por ZAR 147</div>
+        </div>
+
+        <!-- GUARANTEE -->
+        <div class="guarantee-block">
+            <div class="g-icon-big">🛡️</div>
+            <div class="g-text">
+                <strong>Garantia Vitalícia de Acesso</strong>
+                <span>O seu acesso é permanente. Se em qualquer momento não estiver satisfeito nos primeiros 30 dias,
+                    devolvemos o seu dinheiro. Sem perguntas.</span>
+            </div>
+        </div>
+
+        <!-- PRICE -->
+        <div class="price-final">
+            <div class="lbl">Investimento Único</div>
+            <div class="price-orig">ZAR 197 × 5 anos = ZAR 985</div>
+            <div class="price-new">ZAR 147</div>
+            <div class="price-sub">Pagamento único · Acesso para sempre</div>
+            <div class="badge-forever">♾️ VITALÍCIO</div>
+        </div>
+
+        <button class="cta-yes" id="btnYes" onclick="acceptOffer()">
+            ♾️ SIM! Garantir Acesso Vitalício por ZAR 147
+        </button>
+        <button class="cta-no" onclick="declineOffer()">
+            Não, prefiro renovar todos os anos por ZAR 197
+        </button>
+        <div class="cta-note">🔒 Pagamento único e seguro · Acesso permanente garantido</div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo"><span class="g">G</span><span class="o1">o</span><span class="o2">o</span><span
+                class="g2">g</span><span class="l">l</span><span class="e">e</span></div>
+        <div class="footer-text">© 2025 Google Rewards · All rights reserved<br>This site is operated independently and
+            does not officially represent Google LLC.</div>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="g-dots"><span></span><span></span><span></span><span></span></div>
+        <div class="overlay-text">A confirmar acesso vitalício…</div>
+        <div class="overlay-sub">Por favor não feche esta janela</div>
+    </div>
+
+    <script>
+        (function () { var total = 10 * 60 - 1, el = document.getElementById('countdown'), iv = setInterval(function () { if (total <= 0) { clearInterval(iv); el.textContent = '00:00'; return } var m = Math.floor(total / 60), s = total % 60; el.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s; total--; }, 1000) })();
+        function getUTMs() { var p = new URLSearchParams(window.location.search), params = new URLSearchParams();['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'src', 'sck'].forEach(function (k) { if (p.get(k)) params.set(k, p.get(k)) }); return params.toString() }
+        function acceptOffer() {
+            if (typeof fbq !== 'undefined') { fbq('track', 'AddToCart', { value: 147, currency: 'ZAR', content_name: 'Google Rewards Lifetime' }) }
+            document.getElementById('overlay').classList.add('show');
+            setTimeout(function () { var base = 'https://checkout.payjsr.com/SEU-LINK-LIFETIME-AQUI'; var qs = getUTMs(); window.location.href = base + (qs ? '?' + qs : ''); }, 1200);
+        }
+        function declineOffer() { var qs = getUTMs(); window.location.href = 'upsell4-giftcards.html' + (qs ? '?' + qs : '') }
+    </script>
+</body>
+
+</html>
