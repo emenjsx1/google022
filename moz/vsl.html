@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Rewards - VSL</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary: #22c55e;
+            --primary-hover: #16a34a;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --fb-bg: #18191a;
+            --fb-card: #242526;
+            --fb-border: #3e4042;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .header-text {
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
+        .video-container {
+            position: relative;
+            background: #000;
+        }
+
+        .sound-warning {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        /* Facebook Comments */
+        .fb-section {
+            background: var(--fb-card);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border: 1px solid var(--fb-border);
+        }
+
+        .fb-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--fb-border);
+            margin-bottom: 1.5rem;
+        }
+
+        .fb-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            color: #2e89ff;
+        }
+
+        .comment {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #444;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .comment-content {
+            background: #3a3b3c;
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+            position: relative;
+            flex-grow: 1;
+        }
+
+        .comment-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .comment-text {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .comment-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding-left: 1rem;
+        }
+
+        .comment-likes {
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            background: #3a3b3c;
+            padding: 2px 8px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.75rem;
+            border: 1px solid var(--fb-border);
+        }
+
+        .like-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-box {
+            background: #3a3b3c;
+            padding: 0.75rem 1rem;
+            border-radius: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            width: 100%;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-text">
+            Assista este vídeo até o final e veja como liberar o seu saldo 👇
+        </div>
+
+        <div class="video-container" style="width: 100%; border-radius: 1rem; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); margin-bottom: 2rem; border: 1px solid var(--border);">
+            <iframe width="100%" style="aspect-ratio: 8/5;" src="https://web.kilax.app/embed/241W2xGvedy6BO69c9b3e36582c" title="Kilax Player" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="sound-warning">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21c-1.107 0-2-2.148-2-4.8 0-4.04 2-7.2 2-7.2s2 3.16 2 7.2c0 2.652-.893 4.8-2 4.8zm0-18c-3.313 0-6 2.687-6 6 0 3.313 2.687 6 6 6s6-2.687 6-6c0-3.313-2.687-6-6-6z"/></svg>
+            Verifique se o seu som está ligado.
+        </div>
+
+        <!-- Fake Facebook Section -->
+        <div class="fb-section">
+            <div class="fb-header">
+                <div class="fb-logo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
+                    Facebook
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">11 de 22 comentários</div>
+            </div>
+
+            <!-- Comment 1 -->
+            <div class="comment">
+                <div class="avatar"><img src="https://i.pravatar.cc/150?u=carlos" alt=""></div>
+                <div style="width: 100%;">
+                    <div class="comment-content">
+                        <span class="comment-name">Carlos Mucavel</span>
+                        <div class="comment-text">Obrigado, consegui sacar os 213 dólares 🙏 agora estou a fazer mais avaliações para ganhar mais.</div>
+                        <div class="comment-likes">
+                            <span class="like-icons">👍❤️😆</span> 42
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comment 2 -->
+            <div class="comment">
+                <div class="avatar"><img src="https://i.pravatar.cc/150?u=nelma" alt=""></div>
+                <div style="width: 100%;">
+                    <div class="comment-content">
+                        <span class="comment-name">Nelma Chauque</span>
+                        <div class="comment-text">Isso é surreal 🤯 acho que esse será o meu ano kkkk</div>
+                        <div class="comment-likes">
+                            <span class="like-icons">😆❤️</span> 31
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comment 3 -->
+            <div class="comment">
+                <div class="avatar"><img src="https://i.pravatar.cc/150?u=joao" alt=""></div>
+                <div style="width: 100%;">
+                    <div class="comment-content">
+                        <span class="comment-name">João Mabunda</span>
+                        <div class="comment-text">Gostaria de agradecer por essa oportunidade, principalmente nós que fomos afetados pelas cheias em Xai-Xai. Tem ajudado muito, obrigado.</div>
+                        <div class="comment-likes">
+                            <span class="like-icons">❤️👍</span> 56
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-box">Escreva um comentário...</div>
+        </div>
+    </div>
+
+    <script>
+        // VSL embedded successfully.
+    </script>
+</body>
+</html>

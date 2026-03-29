@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Rewards - Watch Time</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary: #22c55e;
+            --primary-hover: #16a34a;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --danger: #ef4444;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        /* Age Gate Modal */
+        #age-gate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: modalIn 0.5s ease-out;
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .icon-shield {
+            background: rgba(34, 197, 94, 0.1);
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary);
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.4);
+        }
+
+        .btn-outline {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+
+        .online-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+
+        /* Sections */
+        .section {
+            display: none;
+            width: 100%;
+            max-width: 500px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: left;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+
+        .balance-badge {
+            background: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            border: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        .gift-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-balance {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 1rem 0;
+            text-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+        }
+
+        .step-info {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .step-info span {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .emoji-btn {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .emoji-btn:hover {
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Age Verification Overlay -->
+    <div id="age-gate">
+        <div class="modal">
+            <div class="icon-shield">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h2>Verificação de Idade</h2>
+            <p>Confirme que tem pelo menos <strong>18 anos</strong> para participar do programa de recompensas.</p>
+            
+            <button class="btn btn-primary" onclick="proceed()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Sim, tenho 18 anos ou mais
+            </button>
+            
+            <button class="btn btn-outline" onclick="window.location.href='https://google.com'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                Não, tenho menos de 18 anos
+            </button>
+
+            <div class="online-status">
+                <div class="dot"></div>
+                <span>1.897 pessoas online agora</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Welcome Section -->
+    <section id="welcome-section" class="section">
+        <div class="header">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <div class="logo-text">YouTube<br><span style="color:var(--primary); font-size: 0.7rem;">REWARDS</span></div>
+            </div>
+            <div class="balance-badge">$ 33.91</div>
+        </div>
+
+        <div class="card">
+            <div class="gift-icon">🎁</div>
+            <h2>Parabéns!</h2>
+            <p>Você foi selecionado para o novo programa de recompensas do YouTube!</p>
+            
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Seu Saldo Atual</div>
+            <div class="highlight-balance">$ 33.91</div>
+            
+            <div class="step-info">
+                Faça mais <span>5 avaliações</span> e retire!
+            </div>
+            
+            <button class="btn btn-primary" onclick="startEvaluations()">
+                COMEÇAR AGORA
+            </button>
+        </div>
+    </section>
+
+    <!-- Evaluations Section -->
+    <section id="eval-section" class="section">
+        <div class="header">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <div class="logo-text">YouTube<br><span style="color:var(--primary); font-size: 0.7rem;">REWARDS</span></div>
+            </div>
+            <div class="balance-badge" id="eval-balance">$ 33.91</div>
+        </div>
+
+        <div class="card">
+            <div id="eval-content">
+                <div class="step-info">Avaliação <span id="current-step">1</span> de 5</div>
+                <h3 id="eval-question">O que achou deste conteúdo?</h3>
+                <p id="eval-desc">Sua avaliação ajuda o YouTube a melhorar.</p>
+
+                <div style="display: flex; justify-content: space-around; font-size: 2.5rem; margin-bottom: 2rem;">
+                    <span class="emoji-btn" onclick="nextStep()">😡</span>
+                    <span class="emoji-btn" onclick="nextStep()">😐</span>
+                    <span class="emoji-btn" onclick="nextStep()">😊</span>
+                    <span class="emoji-btn" onclick="nextStep()">🤩</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let step = 1;
+        let balance = 33.91;
+
+        function proceed() {
+            document.getElementById('age-gate').style.display = 'none';
+            document.getElementById('welcome-section').style.display = 'block';
+            localStorage.setItem('age_verified', 'true');
+        }
+
+        function startEvaluations() {
+            document.getElementById('welcome-section').style.display = 'none';
+            document.getElementById('eval-section').style.display = 'block';
+        }
+
+        function nextStep() {
+            if (step < 5) {
+                step++;
+                balance += Math.random() * 5 + 4;
+                document.getElementById('current-step').innerText = step;
+                document.getElementById('eval-balance').innerText = '$ ' + balance.toFixed(2);
+                
+                const questions = [
+                    "O que achou deste vídeo?",
+                    "Recomendaria este canal?",
+                    "A qualidade do áudio estava boa?",
+                    "O conteúdo foi útil para você?",
+                    "Avaliação final do programa:"
+                ];
+                document.getElementById('eval-question').innerText = questions[step-1];
+            } else {
+                document.getElementById('eval-content').innerHTML = `
+                    <div class="gift-icon">💰</div>
+                    <h2>Saldo Desbloqueado!</h2>
+                    <p>Você atingiu o limite para liberar o seu saldo.</p>
+                    <div class="highlight-balance">$ ${balance.toFixed(2)}</div>
+                    <button class="btn btn-primary" onclick="window.location.href='vsl.html'">
+                        RESCATAR AGORA
+                    </button>
+                `;
+            }
+        }
+
+        // Check if already verified
+        if (localStorage.getItem('age_verified') === 'true') {
+            document.getElementById('age-gate').style.display = 'none';
+            document.getElementById('welcome-section').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
