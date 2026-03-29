@@ -4,18 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        // ======= CLOAKER REDIRECT =======
-        (function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const isFacebook = urlParams.has('fbclid') || urlParams.get('utm_source') === 'facebook';
-
-            // If NOT coming from Facebook (Direct/Reviewer/Bot), redirect to full funnel
-            if (!isFacebook) {
-                window.location.href = "/funil-completo/";
-            }
-        })();
-    </script>
     <!-- Meta Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {

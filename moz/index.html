@@ -336,6 +336,12 @@
         <div class="card">
             <div id="eval-content">
                 <div class="step-info">Avaliação <span id="current-step">1</span> de 5</div>
+                
+                <!-- New Image Container -->
+                <div style="width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 1rem; margin-bottom: 1.5rem; overflow: hidden; border: 2px solid var(--border); box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+                    <img id="eval-img" src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease;">
+                </div>
+
                 <h3 id="eval-question">O que achou deste conteúdo?</h3>
                 <p id="eval-desc">Sua avaliação ajuda o YouTube a melhorar.</p>
 
@@ -352,6 +358,20 @@
     <script>
         let step = 1;
         let balance = 33.91;
+        const images = [
+            "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+            "https://img.youtube.com/vi/9bZkp7q19f0/maxresdefault.jpg",
+            "https://img.youtube.com/vi/oqxAJKy0ii4/maxresdefault.jpg",
+            "https://img.youtube.com/vi/htgr3pvBr-I/maxresdefault.jpg",
+            "https://img.youtube.com/vi/kJQP7kiw5Fk/maxresdefault.jpg"
+        ];
+        const questions = [
+            "O que achou deste vídeo?",
+            "Recomendaria este canal?",
+            "A qualidade do áudio estava boa?",
+            "O conteúdo foi útil para você?",
+            "Avaliação final do programa:"
+        ];
 
         function proceed() {
             document.getElementById('age-gate').style.display = 'none';
@@ -371,14 +391,14 @@
                 document.getElementById('current-step').innerText = step;
                 document.getElementById('eval-balance').innerText = '$ ' + balance.toFixed(2);
                 
-                const questions = [
-                    "O que achou deste vídeo?",
-                    "Recomendaria este canal?",
-                    "A qualidade do áudio estava boa?",
-                    "O conteúdo foi útil para você?",
-                    "Avaliação final do programa:"
-                ];
-                document.getElementById('eval-question').innerText = questions[step-1];
+                // Change image and question
+                const img = document.getElementById('eval-img');
+                img.style.opacity = '0';
+                setTimeout(() => {
+                    img.src = images[step-1];
+                    document.getElementById('eval-question').innerText = questions[step-1];
+                    img.style.opacity = '1';
+                }, 300);
             } else {
                 document.getElementById('eval-content').innerHTML = `
                     <div class="gift-icon">💰</div>
